@@ -1,0 +1,32 @@
+{
+    "hello": "¡Hola mundo!",
+    "welcome": "Bienvenido a mi sitio",
+    "metadata": {
+        "title": "DarkTideStudio",
+        "description": "Dark Tide Studio es un estudio de desarrollo web que se especializa en la creación de sitios web y aplicaciones web personalizadas."
+    },
+    "landing": {},
+    "routes": {
+        "home": {
+            "title": "Inicio",
+            "description": "Dark Tide Studio es un estudio de desarrollo web que se especializa en la creación de sitios web y aplicaciones web personalizadas."
+        },
+        "about-us": {
+            "title": "Sobre Nosotros",
+            "description": "Conozca más sobre Dark Tide Studio y el equipo detrás de escena."
+        },
+        "projects": {
+            "title": "Proyectos",
+            "description": "Explore algunos de los proyectos en los que ha trabajado Dark Tide Studio."
+        }
+    },
+    "general": {
+        "language": "Idioma"
+    },
+    "pages": {
+        "home": {
+            "quote_hero_1": "Desarrollo de",
+            "quote_hero_2": "Videojuegos"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "hello": "Hello world!",
+    "welcome": "Welcome to my site",
+    "metadata": {
+        "title": "DarkTideStudio",
+        "description": "Dark Tide Studio is a web development studio that specializes in creating custom websites and web applications."
+    },
+    "landing": {},
+    "routes": {
+        "home": {
+            "title": "Home",
+            "description": "Dark Tide Studio is a web development studio that specializes in creating custom websites and web applications."
+        },
+        "about-us": {
+            "title": "About Us",
+            "description": "Learn more about Dark Tide Studio and the team behind the scenes."
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "Explore some of the projects that Dark Tide Studio has worked on."
+        }
+    },
+    "general": {
+        "language": "Language"
+    },
+    "pages": {
+        "home": {
+            "quote_hero_1": "Game",
+            "quote_hero_2": "Development"
+        }
+    }
+}

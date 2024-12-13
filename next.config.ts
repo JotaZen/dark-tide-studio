@@ -1,7 +1,13 @@
+/** @type {import("next")}.NextConfig */
 import type { NextConfig } from "next";
 
+import createNextIntlPlugin from "next-intl/plugin";
+
+const nextIntlPlugin = createNextIntlPlugin();
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    optimizePackageImports: ["@chakra-ui/react"],
+  }
 };
 
-export default nextConfig;
+export default nextIntlPlugin(nextConfig);
