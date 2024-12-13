@@ -5,7 +5,7 @@ const titleLocalization = (title: string) => {
 const mainRoutes = {
   home: {
     titleId: titleLocalization("home"),
-    path: "/",
+    path: "",
   },
   aboutUs: {
     titleId: titleLocalization("about-us"),

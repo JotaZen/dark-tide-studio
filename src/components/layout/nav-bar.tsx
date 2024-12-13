@@ -3,25 +3,27 @@
 import useScroll from '@/hooks/ui/useScroll'
 import mainRoutes from '@/routes/routes'
 import {
-    Button, Center, createListCollection, Flex
-    , PopoverArrow, PopoverBody, PopoverContent, PopoverRoot, PopoverTrigger, Separator, Text
+    Button, createListCollection, Flex
+    , PopoverArrow, PopoverBody, PopoverContent, PopoverRoot, PopoverTrigger, Separator, Text,
+    useBreakpointValue
 } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { useTransition } from 'react'
 import Link from 'next/link';
 import Cookies from 'js-cookie'
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { BsChevronDown } from 'react-icons/bs';
 
 const NavBar = () => {
 
     const { isScrolled } = useScroll()
     const t = useTranslations()
-    const locale = '/' + (Cookies.get('NEXT_LOCALE') || 'es') + '/'
+    const locale = '/' + (Cookies.get('NEXT_LOCALE') || 'es')
 
     const [isPending, startTransition] = useTransition()
     const router = useRouter()
+    const pathName = usePathname()
 
     const onLanguageChange = (value: string) => {
         startTransition(() => {
@@ -29,6 +31,11 @@ const NavBar = () => {
         })
         console.log(isPending)
     }
+
+    const isMobile = useBreakpointValue({
+        base: true,
+        md: false
+    })
 
     return (
         <>
@@ -48,9 +55,16 @@ const NavBar = () => {
                     zIndex: 1000,
                     transition: 'all 0.3s',
                 }}
+
             >
-                <Center flex={1}>
-                    <Flex align={'center'}>
+                <Flex
+                    justify={'center'}
+                    flex={1}
+                    direction={{
+                        base: 'column',
+                        md: 'row'
+                    }}>
+                    <Flex align={'center'} justify={'center'}>
                         <Image
                             style={{
                                 marginTop: '-0.5rem',
@@ -64,7 +78,7 @@ const NavBar = () => {
                             <Text
                                 textAlign={'center'}
                                 fontSize={'lg'}
-                                color={isScrolled ? 'main.600' : 'white'}
+                                color={isScrolled ? 'main.600' : 'gray.300'}
                                 style={{
                                     marginLeft: '.35rem',
                                     fontWeight: 'bolder',
@@ -89,7 +103,7 @@ const NavBar = () => {
                             <Text
                                 textAlign={'center'}
                                 fontSize={'lg'}
-                                color={isScrolled ? 'main.600' : 'white'}
+                                color={isScrolled ? 'main.600' : 'gray.300'}
                                 style={{
                                     fontWeight: 'bolder',
                                 }}
@@ -100,25 +114,44 @@ const NavBar = () => {
                             </Text>
                         </Flex>
                     </Flex>
-                    <Separator orientation={'vertical'} mx={10} height={'2rem'} borderColor={'main.500'} opacity={'.5'} />
+                    <Separator
+                        hidden={isMobile}
+                        orientation={'vertical'} mx={10} height={'2rem'} borderColor={'main.500'} opacity={'.5'} />
 
                     <Flex gap={5}
-                        color={
-                            isScrolled ? 'main.500' : 'white'
-                        }>
+                        align={'center'}
+                        hidden={isMobile}
+                    >
                         <Link href={locale + mainRoutes.home.path} locale={false}>
-                            {t(mainRoutes.home.titleId)}
+                            <Text color={(pathName === locale + mainRoutes.home.path)
+                                ? 'main.500'
+                                : isScrolled ? 'gray.600' : 'gray.200'}
+                            >
+                                {t(mainRoutes.home.titleId)}
+                            </Text>
                         </Link>
                         <Link href={locale + mainRoutes.projects.path} locale={false}>
-                            {t(mainRoutes.projects.titleId)}
+                            <Text color={pathName === locale + mainRoutes.projects.path
+                                ? 'main.500'
+                                : isScrolled ? 'gray.600' : 'gray.200'}
+                            >
+                                {t(mainRoutes.projects.titleId)}
+                            </Text>
                         </Link>
                         <Link href={locale + mainRoutes.aboutUs.path} locale={false}>
-                            {t(mainRoutes.aboutUs.titleId)}
+                            <Text color={(pathName === locale + mainRoutes.aboutUs.path)
+                                ? 'main.500'
+                                : isScrolled ? 'gray.600' : 'gray.200'}
+                            >
+                                {t(mainRoutes.aboutUs.titleId)}
+                            </Text>
                         </Link>
                     </Flex>
 
-                    <Separator orientation={'vertical'} mx={10} height={'2rem'} borderColor={'main.500'} opacity={'.5'} />
-                    <Flex position="relative" >
+                    <Separator hidden={isMobile}
+                        orientation={'vertical'} mx={10} height={'2rem'} borderColor={'main.500'} opacity={'.5'} />
+
+                    <Flex position="relative" hidden={isMobile}>
                         <PopoverRoot
                             positioning={{
                                 placement: 'bottom',
@@ -167,7 +200,7 @@ const NavBar = () => {
                             </PopoverContent>
                         </PopoverRoot>
                     </Flex>
-                </Center >
+                </Flex >
 
             </Flex >
         </>

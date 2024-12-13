@@ -157,23 +157,64 @@ export default function Page() {
 
                         </Flex> */}
 
-                        <Stack gap={0}>
-                            <Text
-                                fontSize={'xl'}
-                                color={'main.600'}
-                                style={{
-                                    fontWeight: 'bolder',
-                                }}
-                                letterSpacing={'tight'}
-                                m={0}
-                                mt={-5}
-                            >
-                                Dark Tide Studio
-                            </Text>
+                        <Stack gap={0} pl={{
+                            base: 10,
+                            md: 20
+                        }}>
+                            <Flex>
+                                <Text
+                                    fontSize={{
+                                        base: 'md',
+                                        md: 'xl'
+                                    }}
+                                    color={'gray.300'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                    mt={-5}
+                                >
+                                    Dark
+                                </Text>
+                                <Text
+                                    fontSize={{
+                                        base: 'md',
+                                        md: 'xl'
+                                    }}
+                                    color={'main.500'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                    mt={-5}
+                                >
+                                    Tide
+                                </Text>
+                                <Text
+                                    fontSize={{
+                                        base: 'md',
+                                        md: 'xl'
+                                    }}
+                                    color={'gray.300'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                    mt={-5}
+                                >
+                                    Studio
+                                </Text>
+                            </Flex>
 
                             <Text
-                                fontSize={'5xl'}
-                                color={'white'}
+                                fontSize={{
+                                    base: '3xl',
+                                    md: '5xl'
+                                }}
+                                color={'gray.200'}
                                 style={{
                                     fontWeight: 'bolder',
                                 }}
@@ -183,7 +224,10 @@ export default function Page() {
                                 {t('pages.home.quote_hero_1')}
                             </Text>
                             <Text
-                                fontSize={'5xl'}
+                                fontSize={{
+                                    base: '4xl',
+                                    md: '5xl'
+                                }}
                                 color={'main.500'}
                                 style={{
                                     fontWeight: 'bolder',
