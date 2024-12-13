@@ -9,13 +9,15 @@ import {
 } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { useTransition } from 'react'
+import React, { useEffect, useState, useTransition } from 'react'
 import Link from 'next/link';
 import Cookies from 'js-cookie'
 import { usePathname, useRouter } from 'next/navigation';
 import { BsChevronDown } from 'react-icons/bs';
 
 const NavBar = () => {
+
+    const [clientLoaded, setClientLoaded] = useState(false)
 
     const { isScrolled } = useScroll()
     const t = useTranslations()
@@ -37,6 +39,14 @@ const NavBar = () => {
         md: false
     })
 
+    useEffect(() => {
+        setClientLoaded(true)
+    }, [])
+
+    if (!clientLoaded) {
+        return null
+    }
+
     return (
         <>
 
@@ -55,7 +65,6 @@ const NavBar = () => {
                     zIndex: 1000,
                     transition: 'all 0.3s',
                 }}
-
             >
                 <Flex
                     justify={'center'}
