@@ -1,12 +1,32 @@
+"use client"
 
 import NavBar from '@/components/layout/nav-bar';
 import { Box, Center, Flex, Stack, Text } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function Page() {
 
     const t = useTranslations();
+    const [backgroundIndex, setBackgroundIndex] = useState(0);
+
+    useEffect(() => {
+        const i = setInterval(() => {
+            setBackgroundIndex((prev) => {
+                console.log(prev);
+                if (prev > 2) {
+                    return 0;
+                } else {
+                    return prev + 1;
+                }
+            });
+        }, 3000);
+
+        return () => {
+            clearInterval(i);
+        }
+    }, []);
 
     return (
         <Box
@@ -15,7 +35,7 @@ export default function Page() {
             <NavBar />
             {/* Hero */}
             <Flex
-                bg={'gray'}
+                bg={'#0f0f0f'}
                 h={'100dvh'}
                 w={'100%'}
                 p={0}
@@ -23,13 +43,53 @@ export default function Page() {
                 style={{ position: 'relative' }}
                 flex={1}
             >
+
+
                 <Image
-                    src={'/img/landing/hero.png'}
+                    style={{
+                        opacity: backgroundIndex === 0 ? 1 : 0,
+                        transition: 'opacity .5s',
+                    }}
+                    src={'/img/landing/hero1.png'}
                     alt={'Hero'}
                     layout={'fill'}
                     objectFit={'cover'}
                     objectPosition={'center'}
                 />
+                <Image
+                    style={{
+                        opacity: backgroundIndex === 1 ? 1 : 0,
+                        transition: 'opacity .5s',
+                    }}
+                    src={'/img/landing/hero4.jpg'}
+                    alt={'Hero'}
+                    layout={'fill'}
+                    objectFit={'cover'}
+                    objectPosition={'top'}
+                />
+                <Image
+                    style={{
+                        opacity: backgroundIndex === 2 ? 1 : 0,
+                        transition: 'opacity .5s',
+                    }}
+                    src={'/img/landing/hero3.jpg'}
+                    alt={'Hero'}
+                    layout={'fill'}
+                    objectFit={'cover'}
+                    objectPosition={'top'}
+                />
+                <Image
+                    style={{
+                        opacity: backgroundIndex === 3 ? 1 : 0,
+                        transition: 'opacity .5s',
+                    }}
+                    src={'/img/landing/hero6.png'}
+                    alt={'Hero'}
+                    layout={'fill'}
+                    objectFit={'cover'}
+                    objectPosition={'top'}
+                />
+
                 <Box
                     style={{
                         position: 'absolute',
