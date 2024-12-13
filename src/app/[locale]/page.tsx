@@ -15,7 +15,7 @@ export default function Page() {
             <NavBar />
             {/* Hero */}
             <Flex
-                bg={'red'}
+                bg={'gray'}
                 h={'100dvh'}
                 w={'100%'}
                 p={0}
