@@ -1,10 +1,11 @@
 
-export const dynamic = 'force-dynamic'; // Para asegurarnos de que esto se renderice en SSR
+"use strict";
 
 import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import seoKeywords from "@/constants/text/keywords";
 import { Provider } from "@/components/ui/provider";
+import MainLayout from "@/components/layout/main-layout";
 
 export default async function LocaleLayout({
     children,
@@ -13,7 +14,7 @@ export default async function LocaleLayout({
     children: React.ReactNode;
     params: { locale: string }
 }) {
-    const { locale } = params;
+    const { locale } = await params;
     const messages = await getMessages({ locale });
     const t = createTranslator({ locale, messages });
 
@@ -28,13 +29,15 @@ export default async function LocaleLayout({
                 <link rel="icon" href="/logo.png" />
             </head>
             <body>
-                <NextIntlClientProvider
-                    messages={messages}
-                >
-                    <Provider>
-                        {children}
-                    </Provider>
-                </NextIntlClientProvider>
+                <Provider>
+                    <NextIntlClientProvider
+                        messages={messages}
+                    >
+                        <MainLayout>
+                            {children}
+                        </MainLayout>
+                    </NextIntlClientProvider>
+                </Provider>
             </body>
         </html >
     );

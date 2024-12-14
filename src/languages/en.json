@@ -3,13 +3,13 @@
     "welcome": "Welcome to my site",
     "metadata": {
         "title": "DarkTideStudio",
-        "description": "Dark Tide Studio is a web development studio that specializes in creating custom websites and web applications."
+        "description": "Dark Tide Studio is a video game development studio"
     },
     "landing": {},
     "routes": {
         "home": {
             "title": "Home",
-            "description": "Dark Tide Studio is a web development studio that specializes in creating custom websites and web applications."
+            "description": "Dark Tide Studio is a video game development studio"
         },
         "about-us": {
             "title": "About Us",
@@ -18,6 +18,10 @@
         "projects": {
             "title": "Projects",
             "description": "Explore some of the projects that Dark Tide Studio has worked on."
+        },
+        "team": {
+            "title": "Team",
+            "description": "Meet the team behind Dark Tide Studio."
         }
     },
     "general": {
@@ -27,6 +31,19 @@
         "home": {
             "quote_hero_1": "Game",
             "quote_hero_2": "Development"
+        }
+    },
+    "team": {
+        "coal-charcoal": {
+            "name": "Coal Charcoal",
+            "role": "Illustrator",
+            "description": "Artist"
+        }
+    },
+    "projects": {
+        "sotd": {
+            "title": "Sons of the Depths",
+            "description": "Sons of the Depthss (SOTD) is a survival horror game set in a remote village near the arctic circle. The game is inspired by the works of H.P. Lovecraft and the Cthulhu Mythos."
         }
     }
 }

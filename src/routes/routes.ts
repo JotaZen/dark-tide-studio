@@ -15,5 +15,9 @@ const mainRoutes = {
     titleId: titleLocalization("projects"),
     path: "/projects",
   },
+  team: {
+    titleId: titleLocalization("team"),
+    path: "/team",
+  },
 };
 export default mainRoutes;
