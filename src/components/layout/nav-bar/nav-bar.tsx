@@ -1,3 +1,5 @@
+"use client";
+
 import mainRoutes from '@/routes/routes'
 import {
     Button, createListCollection, Flex
@@ -71,7 +73,7 @@ const NavBar = ({
             >
 
                 <Flex
-                    bgColor={'main.500'}
+                    bgColor={'main.600'}
                     flex={1}
                     textAlign={'center'}
                     justify={'center'}
@@ -158,16 +160,13 @@ const NavBar = ({
                             open={open}
                             onOpenChange={(e) => setOpen(e.open)}
                         >
-                            <PopoverTrigger>
-                                <Button
-                                    size="sm"
-                                    variant="solid"
-                                    colorPalette={isScrolled ? 'blue' : 'blue'}
-                                    height={'2.5rem'}
-                                >
-                                    {t("general.language")}
-                                    <BsTranslate />
-                                </Button>
+                            <PopoverTrigger
+                                as={Button}
+                                colorPalette={isScrolled ? 'blue' : 'blue'}
+                                height={'2.5rem'}
+                            >
+                                {t("general.language")}
+                                <BsTranslate />
                             </PopoverTrigger>
                             <PopoverContent
                                 position="absolute"

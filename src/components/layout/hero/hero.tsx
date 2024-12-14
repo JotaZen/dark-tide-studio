@@ -8,7 +8,12 @@ const Hero = ({
     children
 }: {
     height?: string
-    images?: string[]
+    images?: {
+        src: string
+        layout?: 'fill' | 'intrinsic' | 'responsive' | undefined
+        objectFit?: 'fill' | 'cover' | 'contain' | 'none' | 'scale-down' | undefined
+        objectPosition?: string
+    }[]
     children?: React.ReactNode
 }) => {
 
@@ -56,11 +61,11 @@ const Hero = ({
                             opacity: (backgroundIndex === index && clientLoaded) ? 1 : 0,
                             transition: 'opacity .5s',
                         }}
-                        src={image}
+                        src={image.src}
                         alt={'Hero Image ' + index}
-                        layout={'fill'}
-                        objectFit={'cover'}
-                        objectPosition={'center'}
+                        layout={image.layout || 'fill'}
+                        objectFit={image.objectFit || 'cover'}
+                        objectPosition={image.objectPosition || 'center'}
                     />
                 ))
             }
