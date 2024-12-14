@@ -61,7 +61,7 @@ const SOTDIndex = () => {
                     }
                 />
                 <Separator borderColor={'gray.200'} my={10} />
-                <Center >
+                <Center flexDir={'column'} gap={5}>
                     <iframe
                         aria-label='SOTD Miro'
                         width="900"
@@ -72,6 +72,13 @@ const SOTDIndex = () => {
                         allow="fullscreen; clipboard-read; clipboard-write"
                         allowFullScreen></iframe>
 
+
+                    <iframe
+                        aria-label='SOTD Test lock'
+                        src="https://drive.google.com/file/d/13uKkYHCxnfSIsHbrzXlhXvi_C3JGtzMg/preview"
+                        width="640" height="480"
+                        allow="autoplay"
+                    />
                 </Center>
             </Stack>
         </Center >

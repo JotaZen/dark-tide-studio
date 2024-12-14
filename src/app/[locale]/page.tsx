@@ -1,10 +1,13 @@
 "use client"
 
-import { Box, Card, Center, Flex, Stack, Text } from '@chakra-ui/react';
+import { getLocation } from '@/helpers/routesHelper';
+import mainRoutes from '@/routes/routes';
+import { Box, Button, Card, Center, Flex, GridItem, Separator, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { BsChevronDown } from 'react-icons/bs';
+import { BsChevronDown, BsChevronRight } from 'react-icons/bs';
 
 export default function Page() {
     const t = useTranslations();
@@ -32,9 +35,7 @@ export default function Page() {
     }, []);
 
     return (
-        <Box
-            pos={'relative'}
-        >
+        <Box>
             {/* Hero */}
             <Flex
                 bg={'#0f0f0f'}
@@ -288,18 +289,96 @@ export default function Page() {
             {/* Contenido */}
 
 
-            <Center pt={150} bgColor={'gray.50'}>
-                <Flex>
+            <Center py={220} bgColor={'gray.50'}>
+                <Card.Root
+                    bgColor={'main.800'}
+                    px={10}
+                    color={'gray.100'} border={0} boxShadow={'2xs'} maxWidth={{
+                        base: '95%',
+                        md: '80%',
+                        lg: '70%',
+                    }}>
+                    <Card.Body mt={-20}>
+                        <SimpleGrid columns={{
+                            base: 1,
+                            md: 2
+                        }}>
+                            <GridItem
+                                colSpan={{
+                                    base: 1,
+                                    md: 1
+                                }}
+                                px={4}
+                                pb={10}
+                            >
+                                <Center pt={10} mt={20}>
+                                    <Image
+                                        src={'/img/projects/sotd/title.png'}
+                                        width={500}
+                                        style={{
+                                            filter: "invert(1)",
+                                        }}
+                                        height={500}
+                                        alt='SOTD'
+                                    />
+                                </Center>
+                                <Separator borderColor={'main.600'} my={10} />
+                                <Text>
+                                    <b>Sons of the Depths</b> es un videojuego de survival horror en tercera persona que toma inspiración del horror cósmico y las obras de H.P. Lovecraft.
+                                    Ambientado en un pueblo costero en Rusia, cerca del Ártico,
+                                    el jugador asume el papel de <b>Hanna</b>, una periodista que investiga leyendas locales y los secretos que ocultan.
+                                </Text>
+                                <Text my={5}>
+                                    El juego combina <b>exploración, combate, gestión de recursos y resolución de acertijos</b>, en un entorno cargado de tensión, donde la ambientación gélida y
+                                    el diseño sonoro contribuyen a crear una experiencia inmersiva centrada en el misterio y la supervivencia.
 
-                    <Card.Root bgColor={'white'} color={'main.800'} border={0} boxShadow={'2xs'} flex={1}>
-                        <Card.Body>
-                            <Text>
-                                {t('projects.sotd.title')}
-                            </Text>
-                        </Card.Body>
-                    </Card.Root>
-                </Flex>
+                                </Text>
 
+
+                            </GridItem>
+                            <GridItem
+                                position={'relative'}
+                                colSpan={1}
+                                px={10}
+                                justifyContent={'center'}
+                                justifyItems={'center'}
+                            >
+                                <Center
+                                    position="relative"
+                                    overflow="visible"
+                                >
+                                    <Image
+                                        src={'/img/projects/sotd/concept/visuals1.png'}
+                                        alt={'Hero'}
+                                        objectFit={'cover'}
+                                        objectPosition={'top'}
+                                        width={'10000'}
+                                        height={800}
+                                    />
+                                </Center>
+                                <Center mt={10} pb={5}>
+                                    <Link
+                                        style={{
+                                            textDecoration: 'underline',
+
+                                        }}
+                                        href={getLocation() + mainRoutes.projects.path}
+                                    >
+                                        <Button
+                                            colorScheme={'main'}
+                                            size={'lg'}
+                                            px={10}
+                                        >
+                                            <BsChevronRight />
+                                            Ver más
+                                        </Button>
+                                    </Link>
+                                </Center>
+                            </GridItem>
+
+                        </SimpleGrid>
+                    </Card.Body>
+                </Card.Root>
             </Center>
         </Box >
     );
