@@ -1,7 +1,8 @@
 "use client"
 
 import Hero from '@/components/layout/hero/hero'
-import { Box, Flex, Stack, Text } from '@chakra-ui/react'
+import SOTDIndex from '@/components/projects/sotd/sotd-index'
+import { Flex, Stack, Text } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
@@ -12,13 +13,11 @@ const Page = () => {
     return (
         <>
             <Hero
-                height={'55dvh'}
+                height={'60dvh'}
                 images={[
                     {
-                        src: '/img/projects/sotd/visuals1.png',
+                        src: '/img/landing/hero1.png',
                         layout: 'fill',
-                        objectFit: 'contain',
-                        objectPosition: '50% top'
                     }
                 ]}
             >
@@ -114,10 +113,7 @@ const Page = () => {
 
                 </Stack>
             </Hero >
-
-            <Box py={700}>
-
-            </Box>
+            <SOTDIndex />
         </>
     )
 }

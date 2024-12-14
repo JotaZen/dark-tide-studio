@@ -22,7 +22,7 @@ const MainLayout = ({
             {children}
 
 
-            <Separator borderColor={'gray.200'} />
+            <Separator borderColor={'gray.100'} />
             <Footer />
 
             <IconButton

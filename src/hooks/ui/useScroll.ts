@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useState } from "react";
 
 const useScroll = () => {
@@ -6,7 +6,9 @@ const useScroll = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setTimeout(() => {
+        setIsScrolled(window.scrollY > 0);
+      }, 100);
     };
 
     window.addEventListener("scroll", handleScroll);

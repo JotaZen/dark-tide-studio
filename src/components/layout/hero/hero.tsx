@@ -12,7 +12,8 @@ const Hero = ({
         src: string
         layout?: 'fill' | 'intrinsic' | 'responsive' | undefined
         objectFit?: 'fill' | 'cover' | 'contain' | 'none' | 'scale-down' | undefined
-        objectPosition?: string
+        objectPosition?: string,
+        p?: string
     }[]
     children?: React.ReactNode
 }) => {
@@ -60,12 +61,14 @@ const Hero = ({
                         style={{
                             opacity: (backgroundIndex === index && clientLoaded) ? 1 : 0,
                             transition: 'opacity .5s',
+                            padding: image.p || '0'
                         }}
                         src={image.src}
                         alt={'Hero Image ' + index}
                         layout={image.layout || 'fill'}
                         objectFit={image.objectFit || 'cover'}
                         objectPosition={image.objectPosition || 'center'}
+
                     />
                 ))
             }
