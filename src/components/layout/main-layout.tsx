@@ -6,6 +6,11 @@ import useScroll from '@/hooks/ui/useScroll'
 import { IconButton, Separator } from '@chakra-ui/react';
 import { BsChevronUp } from 'react-icons/bs';
 import Footer from './footer';
+import 'react-photo-view/dist/react-photo-view.css';
+
+
+
+import { PhotoProvider } from 'react-photo-view';
 
 
 const MainLayout = ({
@@ -19,7 +24,10 @@ const MainLayout = ({
     return (
         <>
             <NavBar isScrolled={isScrolled} />
-            {children}
+
+            <PhotoProvider>
+                {children}
+            </PhotoProvider>
 
 
             <Separator borderColor={'gray.100'} />

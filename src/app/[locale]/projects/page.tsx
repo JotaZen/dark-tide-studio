@@ -105,12 +105,9 @@ const Page = () => {
                         </Stack >
                         {/* 2 */}
                         <Flex flex={1}>
-
                         </Flex >
 
                     </Flex >
-
-
                 </Stack>
             </Hero >
             <SOTDIndex />
