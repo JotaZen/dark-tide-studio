@@ -56,3 +56,19 @@ body.prevent-scroll {
   overflow: hidden;
   margin-right: calc(100vw - 100%);
 }
+
+
+
+.glass-dark {
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+  border: 1px solid rgba(0, 0, 0, 0.65);
+}
+
+.carousel-container {
+  width: 100%;
+}

@@ -2,7 +2,12 @@ const titleLocalization = (title: string) => {
   return `routes.${title}.title`;
 };
 
-const mainRoutes = {
+const mainRoutes: {
+  [key: string]: {
+    titleId: string;
+    path: string;
+  };
+} = {
   home: {
     titleId: titleLocalization("home"),
     path: "",

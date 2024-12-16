@@ -1,5 +1,4 @@
-import { default as C } from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Carousel from "react-multi-carousel";
 
 import React from 'react'
 
@@ -23,12 +22,15 @@ const responsive = {
     }
 };
 
-const Carousel = ({
+const ICarousel = ({
     items
 }: {
     items: React.ReactNode[]
 }) => {
-    return <C responsive={responsive}>
+    return <Carousel
+        responsive={responsive}
+        containerClass="carousel-container"
+    >
         {
             items.map((item, index) => (
                 <React.Fragment key={index}>
@@ -36,7 +38,7 @@ const Carousel = ({
                 </React.Fragment>
             ))
         }
-    </C>;
+    </Carousel>;
 }
 
-export default Carousel
+export default ICarousel

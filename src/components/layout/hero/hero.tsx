@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Flex, Stack } from '@chakra-ui/react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
@@ -51,7 +53,7 @@ const Hero = ({
 
             style={{ position: 'relative' }}
             flex={1}
-            boxShadow={'0rem -8rem 12rem 9rem #32aafa20'}
+        // boxShadow={'0rem -8rem 12rem 9rem #32aafa20'}
         >
 
             {

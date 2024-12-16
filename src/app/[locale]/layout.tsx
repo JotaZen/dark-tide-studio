@@ -1,11 +1,13 @@
 
 "use strict";
 
+import "react-multi-carousel/lib/styles.css";
 import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import seoKeywords from "@/constants/text/keywords";
 import { Provider } from "@/components/ui/provider";
 import MainLayout from "@/components/layout/main-layout";
+import Head from "next/head";
 
 export default async function LocaleLayout({
     children,
@@ -20,14 +22,14 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} suppressHydrationWarning>
-            <head>
+            <Head>
                 <title>{t('metadata.title')}</title>
                 <meta name="description" content={t('metadata.description')} />
                 <meta name="keywords" content={
                     seoKeywords
                 } />
                 <link rel="icon" href="/logo.png" />
-            </head>
+            </Head>
             <body>
                 <Provider>
                     <NextIntlClientProvider

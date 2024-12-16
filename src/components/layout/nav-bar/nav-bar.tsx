@@ -33,8 +33,10 @@ const NavBar = ({
     const pathName = usePathname()
 
     const onLanguageChange = (value: string) => {
+        Cookies.set('NEXT_LOCALE', value)
+        const currentPath = pathName.replace(locale, '')
         startTransition(() => {
-            router.replace(`/${value}`)
+            router.replace(`/${value}` + currentPath)
         })
     }
 
