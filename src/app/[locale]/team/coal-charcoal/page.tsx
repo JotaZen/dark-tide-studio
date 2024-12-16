@@ -1,7 +1,7 @@
 import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
 import CoalGallery from '@/components/team/coal-charcoal/coal-gallery'
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Badge, Box, Flex, HStack, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
@@ -9,87 +9,118 @@ const Page = () => {
 
 
     return (
-        <>
+        <Box>
             <Hero
                 height={'100dvh'}
                 images={[
                     {
                         src: '/img/team/coal-charcoal/lucifer1.jpg',
                         objectFit: 'cover',
-                        objectPosition: 'right -15rem'
-                    }
+                        objectPosition: 'center 10%'
+                    },
+                    {
+                        src: '/img/team/coal-charcoal/festo1.jpg',
+                        objectFit: 'cover',
+                        objectPosition: 'center 15%'
+                    },
+                    {
+                        src: '/img/team/coal-charcoal/astarte.jpg',
+                        objectFit: 'cover',
+                        objectPosition: 'center'
+                    },
+
                 ]}
             >
-                <Box mt={'25dvh'} />
+
                 <PageTitle
                     leftChildren={
-                        <Flex>
-                            <Text
-                                fontSize={{
-                                    base: '3xl',
-                                    md: '5xl'
-                                }}
-                                color={'gray.200'}
-                                style={{
-                                    fontWeight: 'bolder',
-                                }}
-                                letterSpacing={'tight'}
-                                m={0}
-                            >
-                                Coal
-                            </Text>
-                            <Text
-                                fontSize={{
-                                    base: '3xl',
-                                    md: '5xl'
-                                }}
-                                color={'main.500'}
-                                style={{
-                                    fontWeight: 'bolder',
-                                }}
-                                letterSpacing={'tight'}
-                                m={0}
-                            >
-                                Charcoal
-                            </Text>
-                        </Flex>
-                    }
-                    rightChildren={
                         <>
-                            <Image
-                                alt='Coal Charcoal'
-                                src='/img/team/Coal.png'
-                                width={300}
-                                height={300}
-                                objectFit='cover'
-                                style={{
-                                    borderRadius: '5%',
-                                    boxShadow: '0 1rem 1rem 5px rgba(0,0,0,0.5)'
+                            <Flex
+                                flex={1}
+                                align={{
+                                    base: 'center',
+                                    md: 'flex-end'
                                 }}
-                            />
+                                justify={{
+                                    base: 'flex-end',
+                                    md: 'flex-start'
+                                }}
+                                h={'100%'}
+                                pb={'10%'}
+                                direction={{
+                                    base: 'column',
+                                    md: 'row'
+                                }}
+                            >
+                                <Image
+                                    alt='Coal Charcoal'
+                                    src='/img/team/Coal.png'
+                                    width={150}
+                                    height={150}
+                                    objectFit='cover'
+                                    style={{
+                                        margin: '0 2rem',
+                                        borderRadius: '50%',
+                                        boxShadow: '0 1rem 1rem 5px rgba(0,0,0,0.5)'
+                                    }}
+                                />
+                                <Stack>
+                                    <Flex>
+                                        <Text
+                                            fontSize={{
+                                                base: '3xl',
+                                                md: '5xl'
+                                            }}
+                                            color={'gray.200'}
+                                            style={{
+                                                fontWeight: 'bolder',
+                                            }}
+                                            letterSpacing={'tight'}
+                                            m={0}
+
+                                        >
+                                            Coal
+                                        </Text>
+                                        <Text
+                                            fontSize={{
+                                                base: '3xl',
+                                                md: '5xl'
+                                            }}
+                                            color={'main.500'}
+                                            style={{
+                                                fontWeight: 'bolder',
+                                            }}
+                                            letterSpacing={'tight'}
+                                            m={0}
+                                        >
+                                            Charcoal
+                                        </Text>
+                                    </Flex>
+                                    <HStack>
+                                        <Badge>Ilustración</Badge>
+                                        <Badge>Arte conceptual</Badge>
+                                    </HStack>
+                                </Stack>
+                            </Flex>
                         </>
                     }
                 />
-                <Box pt={'100%'} zIndex={-1}>
-                </Box>
+
             </Hero >
             <Box
-                borderTop={'1px solid #32aafa50'}
-                boxShadow={'0 0 10rem 1rem #32aafa'}
-            >
-            </Box>
-            <Box
-                py={200}
+                boxShadow={'inset 0px 142px 120px -136px rgba(0,0,0,0.75)'}
+                py={250}
                 px={{
                     base: 5,
                     md: '15vw'
                 }}
+                bgColor={'gray.50'}
                 zIndex={3}
             >
                 <CoalGallery />
             </Box>
 
-        </>
+        </Box>
     )
 }
 

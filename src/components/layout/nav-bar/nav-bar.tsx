@@ -80,7 +80,7 @@ const NavBar = ({
                     textAlign={'center'}
                     justify={'center'}
                     py={2}
-
+                    color={'white'}
                     hidden={isScrolled}
                     className='marquee'
                 >

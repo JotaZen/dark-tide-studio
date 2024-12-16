@@ -101,6 +101,7 @@ const MemberCard = ({
                                         colorPalette={contact.color}
                                         variant={contact.variant}
                                         size={'sm'}
+                                        onClick={(e) => contact.url && e.stopPropagation()}
                                     >
                                         {contact.icon}{contact.text && <>&nbsp;</>}{contact.text}
                                     </Button>

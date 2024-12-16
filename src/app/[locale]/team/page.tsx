@@ -56,9 +56,10 @@ const Page = () => {
                                     {
                                         url: 'https://github.com/JotaZen',
                                         icon: <BsGithub />,
-                                        text: 'Github',
+                                        text: '',
                                         color: 'gray',
-                                        variant: 'solid'
+                                        variant: 'solid',
+                                        tooltip: 'GitHub'
                                     },
 
                                 ]}
@@ -73,9 +74,10 @@ const Page = () => {
                                 description={'Ilustración y diseño de personajes'}
                                 contact={[
                                     {
-                                        url: '/es/projects',
+                                        url: '',
                                         icon: <BsGlobe />,
-                                        text: 'Portfolio',
+                                        text: '',
+                                        tooltip: 'Web',
                                         color: 'blue',
                                         variant: 'solid'
                                     },
