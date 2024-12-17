@@ -71,14 +71,15 @@ const MemberCard = ({
             <Box w={
                 {
                     base: '100%',
-                    md: '9rem'
+                    md: '16rem'
                 }
-            } h={
-                {
-                    base: '15rem',
-                    md: 'auto'
-                }
-            } position="relative">
+            }
+                h={
+                    {
+                        base: '15rem',
+                        md: 'auto'
+                    }
+                } position="relative">
 
                 {
                     compact
