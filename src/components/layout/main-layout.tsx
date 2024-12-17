@@ -8,9 +8,9 @@ import { BsChevronUp } from 'react-icons/bs';
 import Footer from './footer';
 import 'react-photo-view/dist/react-photo-view.css';
 
-
-
 import { PhotoProvider } from 'react-photo-view';
+
+import { useSearchParams } from 'next/navigation';
 
 
 const MainLayout = ({
@@ -20,17 +20,23 @@ const MainLayout = ({
 }) => {
     const { isScrolled } = useScroll()
 
+    const params = useSearchParams()
+
+    const scrollableNavbar = params.get('no_scroll') !== '1'
 
     return (
         <>
-            <NavBar isScrolled={isScrolled} />
+            <NavBar
+                isScrolled={isScrolled && scrollableNavbar}
+                position={scrollableNavbar ? 'fixed' : 'absolute'}
+            />
 
             <PhotoProvider>
                 {children}
             </PhotoProvider>
 
 
-            <Separator borderColor={'gray.100'} />
+            <Separator borderColor={'gray.800'} />
             <Footer />
 
             <IconButton

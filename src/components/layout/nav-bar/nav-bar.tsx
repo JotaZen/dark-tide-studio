@@ -66,12 +66,13 @@ const NavBar = ({
                 pos={position}
                 direction={'column'}
                 flex={1}
-                bg={isScrolled ? 'white' : 'transparent'}
+                bg={isScrolled ? 'gray.950' : 'transparent'}
                 style={{
                     zIndex: 1000,
                     transition: 'all 0.3s',
                 }}
                 opacity={clientLoaded ? 1 : 0}
+                zIndex={1001}
             >
 
                 {/* <Flex
@@ -106,11 +107,16 @@ const NavBar = ({
                         md: 'row'
                     }}>
 
-                    <Logo inverted={isScrolled} />
+                    <Logo  />
 
                     <Separator
                         hidden={isMobile}
-                        orientation={'vertical'} mx={10} height={'2.5rem'} borderColor={'main.500'} opacity={'.5'} />
+                        orientation={'vertical'}
+                        mx={10}
+                        height={'2.5rem'}
+                        borderColor={'main.500'}
+                        opacity={'.5'}
+                    />
 
                     <Flex gap={5}
                         align={'center'}
@@ -119,7 +125,7 @@ const NavBar = ({
                         <Link href={locale + mainRoutes.home.path}>
                             <Text color={(pathName === locale + mainRoutes.home.path)
                                 ? 'main.500'
-                                : isScrolled ? 'gray.600' : 'gray.200'}
+                                : isScrolled ? 'gray.100' : 'gray.200'}
                             >
                                 {t(mainRoutes.home.titleId)}
                             </Text>
@@ -127,7 +133,7 @@ const NavBar = ({
                         <Link href={locale + mainRoutes.projects.path}>
                             <Text color={pathName === locale + mainRoutes.projects.path
                                 ? 'main.500'
-                                : isScrolled ? 'gray.600' : 'gray.200'}
+                                : isScrolled ? 'gray.100' : 'gray.200'}
                             >
                                 {t(mainRoutes.projects.titleId)}
                             </Text>
@@ -135,19 +141,19 @@ const NavBar = ({
                         <Link href={locale + mainRoutes.team.path}>
                             <Text color={(pathName === locale + mainRoutes.team.path)
                                 ? 'main.500'
-                                : isScrolled ? 'gray.600' : 'gray.200'}
+                                : isScrolled ? 'gray.100' : 'gray.200'}
                             >
                                 {t(mainRoutes.team.titleId)}
                             </Text>
                         </Link>
-                        <Link href={locale + mainRoutes.aboutUs.path}>
+                        {/* <Link href={locale + mainRoutes.aboutUs.path}>
                             <Text color={(pathName === locale + mainRoutes.aboutUs.path)
                                 ? 'main.500'
                                 : isScrolled ? 'gray.600' : 'gray.200'}
                             >
                                 {t(mainRoutes.aboutUs.titleId)}
                             </Text>
-                        </Link>
+                        </Link> */}
                     </Flex>
 
                     <Separator hidden={isMobile}

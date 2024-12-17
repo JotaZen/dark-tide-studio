@@ -65,7 +65,7 @@ const Page = () => {
                                 ]}
                             />
                         </GridItem>
-                        <GridItem mt={-5}>
+                        <GridItem>
                             <MemberCard
                                 id='coal-charcoal'
                                 name={'Coal Charcoal'}
@@ -98,7 +98,7 @@ const Page = () => {
 
 
 
-                        <GridItem >
+                        <GridItem mr={-5} ml={5}>
                             <MemberCard
                                 id='pato'
                                 name={'Pato'}
@@ -110,7 +110,7 @@ const Page = () => {
                             />
                         </GridItem>
 
-                        <GridItem mt={-5}>
+                        <GridItem mr={-5} ml={5}>
                             <MemberCard
                                 id='pancho'
                                 name={'Pancho'}
@@ -126,9 +126,9 @@ const Page = () => {
 
                 </Center>
                 <Center>
-                    <Separator orientation={'horizontal'} width={'50%'} height={'2.5rem'} borderColor={'gray.200'} opacity={'.5'} />
+                    <Separator orientation={'horizontal'} width={'50%'} height={'2.5rem'} borderColor={'gray.500'} opacity={'.5'} />
                 </Center>
-                <Stack py={15} align={'center'}>
+                <Stack py={200} align={'center'}>
                     {/* <Text fontSize={'3xl'} color={'gray.100'} fontWeight={'bold'}>
                         Colaboradores
                     </Text>

@@ -4,18 +4,29 @@ import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
 import SOTDIndex from '@/components/projects/sotd/sotd-index'
 import ScrollButton from '@/components/ui/buttons/scroll-button'
-import { Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
-import React from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import React, { useEffect } from 'react'
 
 const Page = () => {
 
     const t = useTranslations()
+    const router = useRouter()
+    const path = usePathname()
+    const params = useSearchParams()
+
+
+    useEffect(() => {
+        if (params.get('no_scroll') !== '1') {
+            router.replace(path + '?no_scroll=1')
+        }
+    }, [params, path, router])
 
     return (
         <>
             <Hero
-                height={'50dvh'}
+                height={'100dvh'}
                 images={[
                     {
                         src: '/img/landing/hero1.png',
@@ -41,9 +52,11 @@ const Page = () => {
                         title={t('routes.projects.title')}
                     />
                 </Flex>
-                <ScrollButton top={400} />
+                <ScrollButton />
             </Hero >
+
             <SOTDIndex />
+
         </>
     )
 }

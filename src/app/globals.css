@@ -6,6 +6,7 @@ body {
 
 html {
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .marquee {
@@ -71,4 +72,19 @@ body.prevent-scroll {
 
 .carousel-container {
   width: 100%;
+}
+
+.react-multi-carousel-item {
+  z-index: 1; /* Ajusta el valor según la necesidad */
+  position: relative; /* Asegura que el z-index funcione */
+}
+
+.react-multi-carousel-dot-list {
+  z-index: 10; /* Asegura que los dots estén por encima */
+  position: relative;
+}
+
+.react-multi-carousel-arrow {
+  z-index: 15; /* Flechas por encima de todo */
+  position: relative;
 }

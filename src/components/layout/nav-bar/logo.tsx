@@ -8,7 +8,7 @@ const Logo = ({
     inverted?: boolean
 }) => {
     return (
-        <Flex align={'center'} justify={'center'}>
+        <Flex align={'center'} justify={'center'} position={'relative'}>
             <Image
                 style={{
                     marginTop: '-0.5rem',

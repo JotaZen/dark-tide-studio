@@ -8,7 +8,7 @@ import NavBar from './nav-bar/nav-bar';
 const Footer = () => {
 
     return <>
-        <Center pt={20} bgColor={'white'} flexDir={'column'} gap={5} pb={10} flex={1} w={'100%'}>
+        <Center pt={20} bgColor={'gray.950'} flexDir={'column'} gap={5} pb={10} flex={1} w={'100%'}>
             <Flex>
 
                 {/* <Logo inverted />
@@ -26,10 +26,10 @@ const Footer = () => {
                 <NavBar isScrolled={true} position='relative' />
             </Flex>
             <Stack mt={10} flex={1} w={'100%'} textAlign={'center'} >
-                <Separator borderColor={'gray.100'} flex={1} maxW={'20rem'} margin={'0 auto'} />
+                <Separator borderColor={'gray.500'} flex={1} maxW={'20rem'} margin={'0 auto'} />
                 <Text
                     fontStyle={'italic'}
-                    color={'gray.400'}
+                    color={'gray.500'}
                     fontWeight={'300'}
                 >
                     @2024 Dark Tide Studio

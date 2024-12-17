@@ -53,7 +53,7 @@ const Hero = ({
 
             style={{ position: 'relative' }}
             flex={1}
-        // boxShadow={'0rem -8rem 12rem 9rem #32aafa20'}
+       
         >
 
             {

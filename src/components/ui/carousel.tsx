@@ -42,3 +42,4 @@ const ICarousel = ({
 }
 
 export default ICarousel
+

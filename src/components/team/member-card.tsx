@@ -55,6 +55,7 @@ const MemberCard = ({
                     md: 'row'
                 }
             }
+            height={'100%'}
             overflow="hidden"
             maxW="xl"
             onClick={perfilNavigation}
@@ -68,7 +69,7 @@ const MemberCard = ({
                 scale: 1.01
             }}
         >
-            <Box w={
+            {image && <Box w={
                 {
                     base: '100%',
                     md: '16rem'
@@ -107,7 +108,7 @@ const MemberCard = ({
                     right="0"
                     bottom="0"
                 />
-            </Box>
+            </Box>}
             <Box>
                 <Card.Body>
                     <Card.Title mb="2">
@@ -141,6 +142,7 @@ const MemberCard = ({
                     }
                 </Card.Footer>}
             </Box>
+
         </Card.Root>
     )
 }
