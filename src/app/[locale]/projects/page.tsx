@@ -9,6 +9,8 @@ import { useTranslations } from 'next-intl'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect } from 'react'
 
+
+
 const Page = () => {
 
     const t = useTranslations()

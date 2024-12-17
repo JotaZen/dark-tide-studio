@@ -1,9 +1,11 @@
 
 import PageTitle from '@/components/layout/hero/page-title'
+import Logo from '@/components/layout/nav-bar/logo'
 import MemberCard from '@/components/team/member-card'
 import Overlay from '@/components/ui/bg/overlay'
+import ICarousel from '@/components/ui/carousel'
 import MasonryGrid from '@/components/ui/masonry-grid'
-import { Center, Stack, Text, Image as ChakraImage, Flex, Card, SimpleGrid, GridItem, Separator, Box, HStack, Badge } from '@chakra-ui/react'
+import { Center, Stack, Text, Image as ChakraImage, Flex, Card, SimpleGrid, GridItem, Separator, Box, HStack, Badge, List } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -53,7 +55,7 @@ const SOTDIndex = () => {
                                     px={4}
                                     pb={10}
                                 >
-                                    <Center pt={10} mt={20}>
+                                    <Center pt={10} mt={10}>
                                         <Image
                                             src={'/img/projects/sotd/title.png'}
                                             width={500}
@@ -61,11 +63,34 @@ const SOTDIndex = () => {
                                             alt='SOTD'
                                         />
                                     </Center>
-                                    <Separator borderColor={'main.600'} my={10} />
-                                    <Text>
-
+                                    <Separator borderColor={'gray.300'} my={5} />
+                                    <Text fontSize={'xl'} textAlign={'justify'} mb={3}>
+                                        Objetivos
                                     </Text>
 
+                                    <List.Root>
+                                        <List.Item fontWeight={'bold'}>
+                                            Fundar un estudio de videojuegos y conformar una comunidad en la VIII Región de Chile en torno a la creación de estos
+                                        </List.Item>
+                                        <List.Item fontWeight={'bold'}>
+                                            Lanzar un videojuego de survival horror que sea inmersivo y desafiante
+                                        </List.Item>
+                                    </List.Root>
+                                    <br />
+                                    <List.Root>
+
+                                        <List.Item>
+                                            Lanzar una Demo jugable de SOTD con 4 a 6 horas de duración dentro de 2025
+                                        </List.Item>
+                                        <List.Item>
+                                            Conseguir colaboradores y financiamiento para el desarrollo
+                                        </List.Item>
+                                        <List.Item>
+                                            Publicar el videojuego completo en la plataforma Steam
+                                        </List.Item>
+                                    </List.Root>
+                                    <Separator borderColor={'gray.300'} my={5} />
+                                    <Logo inverted />
                                 </GridItem>
                                 <GridItem
                                     position={'relative'}
@@ -101,6 +126,20 @@ const SOTDIndex = () => {
                                             objectPosition={'top'}
                                         />
                                     </Center>
+                                    <Image
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: 10,
+                                            right: 0,
+                                        }}
+                                        src={'/img/projects/pegi.png'}
+                                        alt={'PG'}
+                                        objectFit={'cover'}
+                                        width={100}
+                                        height={100}
+                                        objectPosition={'top'}
+                                    />
+
                                 </GridItem>
 
                             </SimpleGrid>
@@ -145,7 +184,8 @@ const SOTDIndex = () => {
                                     <MemberCard
                                         id='jota-zen'
                                         name={'Jordy Zenteno'}
-                                        roles={['Música', 'Desarrollo', 'Inteligencia Artificial']}
+                                        roles={['Música', 'Sonido', 'Inteligencia Artificial']}
+                                        description='Música, sonido e inteligencia artificial'
                                         image={''}
                                         contact={[]}
                                     />
@@ -157,9 +197,9 @@ const SOTDIndex = () => {
                                     <MemberCard
                                         id='pato'
                                         name={'Patricio Reyes'}
-                                        roles={['Director', 'Desarrollo']}
+                                        roles={['Dirección', 'Desarrollo', 'Programación']}
                                         image={''}
-                                        description={'Desarrollo'}
+                                        description={'Dirección, desarrollo y programación del proyecto'}
                                         contact={[
                                         ]}
                                     />
@@ -169,9 +209,9 @@ const SOTDIndex = () => {
                                     <MemberCard
                                         id='pancho'
                                         name={'Juan Hernández'}
-                                        roles={['Tester', 'QA', 'Diseño de niveles']}
+                                        roles={['Testing', 'QA', 'Diseño de niveles']}
                                         image={''}
-                                        description={'Pruebas y control de calidad'}
+                                        description={'Diseño de niveles y control de calidad'}
                                         contact={[
                                         ]}
                                     />
@@ -180,7 +220,8 @@ const SOTDIndex = () => {
                                     <MemberCard
                                         id='coal-charcoal'
                                         name={'Leonel San Martín'}
-                                        roles={['Arte Conceptual', 'Ilustración', 'Diseño']}
+                                        description='Arte conceptual y diseño de personajes'
+                                        roles={['Arte', 'Ilustración', 'Diseño']}
                                         image={''}
                                         contact={[]}
                                     />
@@ -208,17 +249,154 @@ const SOTDIndex = () => {
                     />
 
                     <Overlay />
-                    <Flex flex={1}></Flex>
+                    <Flex
+                        width={'80%'}
+                        justify={'center'}
+
+                        zIndex={3}
+                        direction={{
+                            base: 'column',
+                            md: 'row'
+                        }}
+                        flex={1}
+                    >
+                        <Stack justify={'space-evenly'} align={'center'} flex={1} gap={5}>
+                            <Stack align={'center'}>
+
+                                <Text
+                                    fontSize={{
+                                        base: '3xl',
+                                        md: '5xl'
+                                    }}
+                                    color={'gray.200'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                    mb={5}
+                                >
+                                    Fortalezas
+                                </Text>
+
+                                <List.Root color={'white'} fontSize={'xl'}>
+                                    <List.Item>
+                                        Conocimiento del área e industria
+                                    </List.Item>
+                                    <List.Item>
+                                        Experiencia usando metodologías que facilitan el desarrollo
+                                    </List.Item>
+                                    <List.Item>
+                                        Tiempo y recursos para invertir en el desarrollo
+                                    </List.Item>
+                                </List.Root>
+                            </Stack>
+                            <Stack align={'center'}>
+                                <Text
+                                    fontSize={{
+                                        base: '3xl',
+                                        md: '5xl'
+                                    }}
+                                    color={'main.500'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                    mb={5}
+                                >
+                                    Oportunidades
+                                </Text>
+                                <List.Root color={'white'} fontSize={'xl'}>
+                                    <List.Item>
+                                        Sin competencia en la región
+                                    </List.Item>
+                                    <List.Item>
+                                        Tecnología accesible y software de alta calidad
+                                    </List.Item>
+                                    <List.Item>
+                                        Industria en crecimiento, con muchos eventos y networking
+                                    </List.Item>
+                                    <List.Item>
+                                        Auge del mercado Indie
+                                    </List.Item>
+                                </List.Root>
+                            </Stack>
+                        </Stack>
+                        <Stack flex={1} justify={'space-evenly'} align={'center'} gap={5}>
+                            <Stack align={'center'}>
+
+                                <Text
+                                    fontSize={{
+                                        base: '3xl',
+                                        md: '5xl'
+                                    }}
+                                    color={'main.500'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                    mb={5}
+                                >
+                                    Debilidades
+                                </Text>
+                                <List.Root color={'white'} fontSize={'xl'}>
+                                    <List.Item>
+                                        Equipo pequeño con poca experiencia
+                                    </List.Item>
+                                    <List.Item>
+                                        No se cubren todos los roles necesarios
+                                    </List.Item>
+                                    <List.Item>
+                                        La falta de un modelador 3D
+                                    </List.Item>
+                                </List.Root>
+                            </Stack>
+                            <Stack align={'center'}>
+                                <Text
+                                    fontSize={{
+                                        base: '3xl',
+                                        md: '5xl'
+                                    }}
+                                    color={'gray.200'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                    mb={5}
+                                >
+                                    Amenazas
+                                </Text>
+                                <List.Root color={'white'} fontSize={'xl'}>
+                                    <List.Item>
+                                        Falta de financiamiento para el desarrollo
+                                    </List.Item>
+                                    <List.Item>
+                                        Alta cantidad de nuevos videojuegos en el mercado
+                                    </List.Item>
+                                    <List.Item>
+                                        Alta centralización de la industria en Santiago
+                                    </List.Item>
+                                    <List.Item>
+                                        Dificultad del mundo de desarrollo de videojuegos
+                                    </List.Item>
+                                </List.Root>
+                            </Stack>
+
+                        </Stack>
+
+
+                    </Flex>
+
 
                     <NavigationButtons section='s3' previous='team' />
                 </Container>
 
                 <Container id='s3'>
-                    {/* <Flex p={5}>
-                        <Text color={'main.200'} fontSize={'xl'}>
-                            Debilidades
-                        </Text>
-                    </Flex> */}
+                    <Flex p={5}>
+                    </Flex>
                     <Image
                         src={'/img/projects/sotd/concept/1.jpg'}
                         alt={'Hero Image 2'}
@@ -228,11 +406,7 @@ const SOTDIndex = () => {
 
                     />
                     <Overlay />
-                    <Flex flex={1} p={5} zIndex={3}>
-                        <Text color={'gray.100'} fontSize={'xl'}>
-                            Debilidades
-                        </Text>
-                    </Flex>
+
                     <Center height={'80%'} width={'100%'} px={'10%'} position={'relative'} bgColor={'white'} zIndex={3}>
                         <iframe
                             aria-label='Steam stats'
@@ -252,23 +426,7 @@ const SOTDIndex = () => {
                     </Center>
                     <NavigationButtons section='s4' previous='s2' />
                 </Container>
-
                 <Container id='s4' >
-                    <iframe
-                        aria-label='SOTD Miro'
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                        }}
-                        src="https://miro.com/app/embed/uXjVL3WPGfA=/?pres=1&frameId=3458764610683139392&embedId=32940798118"
-                        frameBorder="0"
-                        scrolling="no"
-                        allow="fullscreen; clipboard-read; clipboard-write"
-                        allowFullScreen></iframe>
-
-                    <NavigationButtons section='s5' previous='s3' />
-                </Container>
-                <Container id='s5' >
                     <Center height={'100%'} width={'100%'} position={'relative'} bgColor={'white'}>
                         <iframe
                             aria-label='SOTD Presentation'
@@ -281,8 +439,23 @@ const SOTDIndex = () => {
                         ></iframe>
 
                     </Center>
+                    <NavigationButtons section='s5' previous='s3' />
+                </Container>
+                <Container id='s5' >
+                    <iframe
+                        aria-label='SOTD Miro'
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                        }}
+                        src="https://miro.com/app/embed/uXjVL3WPGfA=/?pres=1&frameId=3458764610683139392&embedId=32940798118"
+                        frameBorder="0"
+                        scrolling="no"
+                        allow="fullscreen; clipboard-read; clipboard-write"
+                        allowFullScreen></iframe>
                     <NavigationButtons previous='s4' section='gallery' />
                 </Container>
+
                 {/* <iframe
 
                     aria-label='SOTD Test lock'
@@ -393,6 +566,92 @@ const SOTDIndex = () => {
                         }
 
                     </MasonryGrid>
+                    <Flex my={20} justify={'center'}>
+                    </Flex>
+                    <ICarousel
+                        items={
+                            [
+                                <Box key={'4'}>
+                                    <PhotoView src={`/img/projects/sotd/concept/sb4.jpg`}>
+                                        <ChakraImage
+                                            src={`/img/projects/sotd/concept/sb4.jpg`}
+                                            style={{
+                                                transition: 'all 0.05s ease',
+                                                userSelect: 'none',
+                                                cursor: 'pointer',
+                                            }}
+                                            _hover={{
+                                                transform: 'scale(1.1)'
+                                            }}
+                                            draggable={false}
+                                            objectFit={'cover'}
+                                            objectPosition={'top'}
+                                            alt={`StoryBoard 2`}
+                                        />
+                                    </PhotoView>
+                                </Box>,
+                                <Box key={'3'}>
+                                    <PhotoView src={`/img/projects/sotd/concept/sb3.jpg`}>
+                                        <ChakraImage
+                                            src={`/img/projects/sotd/concept/sb3.jpg`}
+                                            style={{
+                                                transition: 'all 0.05s ease',
+                                                userSelect: 'none',
+                                                cursor: 'pointer',
+                                            }}
+                                            _hover={{
+                                                transform: 'scale(1.1)'
+                                            }}
+                                            draggable={false}
+                                            objectFit={'cover'}
+                                            objectPosition={'top'}
+                                            alt={`StoryBoard 2`}
+                                        />
+                                    </PhotoView>
+                                </Box>,
+                                <Box key={'2'}>
+                                    <PhotoView src={`/img/projects/sotd/concept/sb2.jpg`}>
+                                        <ChakraImage
+                                            src={`/img/projects/sotd/concept/sb2.jpg`}
+                                            style={{
+                                                transition: 'all 0.05s ease',
+                                                userSelect: 'none',
+                                                cursor: 'pointer',
+                                            }}
+                                            _hover={{
+                                                transform: 'scale(1.1)'
+                                            }}
+                                            draggable={false}
+                                            objectFit={'cover'}
+                                            objectPosition={'top'}
+                                            alt={`StoryBoard 2`}
+                                        />
+                                    </PhotoView>
+                                </Box>,
+                                <Box key={'1'}>
+                                    <PhotoView src={`/img/projects/sotd/concept/sb1.jpg`}>
+                                        <ChakraImage
+                                            src={`/img/projects/sotd/concept/sb1.jpg`}
+                                            style={{
+                                                transition: 'all 0.05s ease',
+                                                userSelect: 'none',
+                                                cursor: 'pointer',
+                                            }}
+                                            _hover={{
+                                                transform: 'scale(1.1)'
+                                            }}
+                                            draggable={false}
+                                            objectFit={'cover'}
+                                            objectPosition={'top'}
+                                            alt={`StoryBoard 2`}
+                                        />
+                                    </PhotoView>
+                                </Box>,
+                            ]
+                        }
+
+
+                    />
                     <Center mt={10}>
                         <NavigationButtons previous='s5' />
                     </Center>
