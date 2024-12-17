@@ -91,7 +91,7 @@ const Hero = ({
 
 
 
-            <Stack flex={1} m={'0 auto'}>
+            <Stack flex={1} m={'0 auto'} zIndex={3}>
                 {children}
             </Stack>
         </Flex >

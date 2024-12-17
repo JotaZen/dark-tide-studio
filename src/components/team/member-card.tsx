@@ -1,6 +1,6 @@
 "use client"
 
-import { Badge, Box, Button, Card, HStack } from '@chakra-ui/react'
+import { Badge, Box, Button, Card, Center, HStack } from '@chakra-ui/react'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { Tooltip } from '../ui/tooltip'
@@ -13,11 +13,12 @@ const MemberCard = ({
     description,
     roles,
     contact,
-    id
+    id,
+    compact
 }: {
     image: string
     name: string
-    description: string
+    description?: string
     roles: string[]
     id: string
     contact: {
@@ -28,6 +29,7 @@ const MemberCard = ({
         variant?: "solid" | "outline" | "ghost" | undefined
         tooltip?: string
     }[]
+    compact?: boolean
 }) => {
     const [mounted, setMounted] = useState(false);
 
@@ -48,7 +50,11 @@ const MemberCard = ({
     return (
 
         <Card.Root
-            flexDirection="row"
+            flexDirection={
+                {
+                    md: 'row'
+                }
+            }
             overflow="hidden"
             maxW="xl"
             onClick={perfilNavigation}
@@ -62,13 +68,36 @@ const MemberCard = ({
                 scale: 1.01
             }}
         >
-            <Box w="15rem" h="auto" position="relative">
-                <Image
-                    objectFit="cover"
-                    layout="fill"
-                    src={image}
-                    alt={name + ' image'}
-                />
+            <Box w={
+                {
+                    base: '100%',
+                    md: '9rem'
+                }
+            } h={
+                {
+                    base: '15rem',
+                    md: 'auto'
+                }
+            } position="relative">
+
+                {
+                    compact
+                        ? <Center p={5} borderRadius={'full'} alignContent={'center'} alignItems={'center'} flex={1} height={'100%'}>
+                            <Image
+                                objectFit="cover"
+                                width={50}
+                                height={50}
+                                src={image}
+                                alt={name + ' image'}
+                            />
+                        </Center>
+                        : <Image
+                            objectFit="cover"
+                            layout="fill"
+                            src={image}
+                            alt={name + ' image'}
+                        />
+                }
                 <Box
 
                     position="absolute"
@@ -92,7 +121,7 @@ const MemberCard = ({
                         ))}
                     </HStack>
                 </Card.Body>
-                <Card.Footer>
+                {!compact && <Card.Footer>
                     {
                         contact.map((contact, index) => (
                             <a key={index} href={contact.url} target="_blank" rel="noreferrer">
@@ -109,7 +138,7 @@ const MemberCard = ({
                             </a>
                         ))
                     }
-                </Card.Footer>
+                </Card.Footer>}
             </Box>
         </Card.Root>
     )

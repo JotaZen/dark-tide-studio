@@ -11,7 +11,7 @@ const SOTDIndex = () => {
     return (
         <Center py={10} bgColor={'gray.50'} color={'main.800'} >
 
-            <Stack flex={1} bgColor={'white'} maxWidth={'1080px'} p={5} overflow={'auto'}>
+            <Stack flex={1} bgColor={'white'} maxWidth={'80%'} p={5} overflow={'auto'}>
                 <Center mt={3} py={6}>
                     <Image
                         src={'/img/projects/sotd/title.png'}

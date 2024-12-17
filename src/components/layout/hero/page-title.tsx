@@ -5,16 +5,20 @@ const PageTitle = ({
     leftChildren,
     rightChildren,
     title,
-    gap = '7dvw'
+    gap = '7dvw',
+    align = 'center',
+    leftPadding = '10'
 }: {
-    leftChildren: React.ReactNode,
+    leftChildren?: React.ReactNode,
     rightChildren?: React.ReactNode
     title?: string
     gap?: string
+    align?: string
+    leftPadding?: string
 }) => {
 
     return (
-        <Stack flex={1} m={'0 auto'} w={'100%'} >
+        <Stack flex={1} m={'0 auto'} w={'100%'} align={align}>
             <Flex
                 flex={1}
                 zIndex={2}
@@ -23,12 +27,10 @@ const PageTitle = ({
                 {/* 1 */}
                 <Stack
                     flex={1}
+                    align={align}
 
                     gap={0}
-                    pl={{
-                        base: 10,
-                        md: 20
-                    }}>
+                    pl={leftPadding}>
 
                     {title && <Flex>
                         <Text

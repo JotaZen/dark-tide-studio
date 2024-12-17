@@ -74,7 +74,7 @@ const NavBar = ({
                 opacity={clientLoaded ? 1 : 0}
             >
 
-                <Flex
+                {/* <Flex
                     bgColor={'main.600'}
                     flex={1}
                     textAlign={'center'}
@@ -95,7 +95,7 @@ const NavBar = ({
                             Ver más
                         </Link>
                     </Text>
-                </Flex>
+                </Flex> */}
 
                 <Flex
                     padding={5}

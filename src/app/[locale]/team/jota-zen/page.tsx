@@ -1,5 +1,6 @@
 import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
+import ScrollButton from '@/components/ui/buttons/scroll-button'
 import { Badge, Box, Flex, HStack, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
@@ -11,11 +12,11 @@ const Page = () => {
             <Hero
                 height={'100dvh'}
                 images={[
-
-
                 ]}
             >
                 <PageTitle
+                    leftPadding='5vw'
+                    align='left'
                     leftChildren={
                         <>
                             <Flex
@@ -29,7 +30,7 @@ const Page = () => {
                                     md: 'flex-start'
                                 }}
                                 h={'100%'}
-                                pb={'10%'}
+                                pb={'5%'}
                                 direction={{
                                     base: 'column',
                                     md: 'row'
@@ -88,7 +89,7 @@ const Page = () => {
                         </>
                     }
                 />
-
+                <ScrollButton />
             </Hero >
             <Box
                 boxShadow={'inset 0px 142px 120px -136px rgba(0,0,0,0.75)'}

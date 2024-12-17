@@ -5,8 +5,25 @@ import { Badge, Box, Flex, HStack, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
-const Page = () => {
+import { Metadata } from 'next';
+import ScrollButton from '@/components/ui/buttons/scroll-button'
 
+export const metadata: Metadata = {
+    title: 'Coal Charcoal',
+    description:
+        'Ilustración y arte conceptual de Coal Charcoal.',
+}
+
+// export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+//     const messages = await import(`../locales/${params.locale}.json`);
+
+//     return {
+//         title: messages.title,
+//         description: messages.description,
+//     };
+// }
+
+const Page = () => {
 
     return (
         <Box>
@@ -33,6 +50,8 @@ const Page = () => {
             >
 
                 <PageTitle
+                    leftPadding='5vw'
+                    align='left'
                     leftChildren={
                         <>
                             <Flex
@@ -46,7 +65,7 @@ const Page = () => {
                                     md: 'flex-start'
                                 }}
                                 h={'100%'}
-                                pb={'10%'}
+                                pb={'5%'}
                                 direction={{
                                     base: 'column',
                                     md: 'row'
@@ -105,7 +124,7 @@ const Page = () => {
                         </>
                     }
                 />
-
+                <ScrollButton />
             </Hero >
             <Box
                 boxShadow={'inset 0px 142px 120px -136px rgba(0,0,0,0.75)'}

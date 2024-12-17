@@ -1,7 +1,7 @@
 import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
 import MemberCard from '@/components/team/member-card'
-import { Box, Center, GridItem, SimpleGrid } from '@chakra-ui/react'
+import { Box, Center, GridItem, Separator, SimpleGrid, Stack } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 import { BsGithub, BsGlobe, BsInstagram } from 'react-icons/bs'
@@ -33,7 +33,7 @@ const Page = () => {
                 />
                 <Box mb={'12dvh'} />
 
-                <Center pb={'30dvh'} zIndex={3}>
+                <Center zIndex={3}>
                     <SimpleGrid
 
                         columns={{
@@ -41,7 +41,7 @@ const Page = () => {
                             md: 2
                         }}
                         gapY={10}
-                        gapX={5}
+                        gapX={20}
                         p={10}
                     >
                         {/* 1 */}
@@ -49,9 +49,9 @@ const Page = () => {
                             <MemberCard
                                 id='jota-zen'
                                 name={'Jota Zen'}
-                                roles={['Músico', 'Developer']}
+                                roles={['Música', 'Developer']}
                                 image={'/img/team/Jota.jpg'}
-                                description={'Música y desarrollo.'}
+                                description={'Música y desarrollo'}
                                 contact={[
                                     {
                                         url: 'https://github.com/JotaZen',
@@ -95,8 +95,54 @@ const Page = () => {
                         </GridItem>
 
 
+
+
+
+                        <GridItem >
+                            <MemberCard
+                                id='pato'
+                                name={'Pato'}
+                                roles={['Developer']}
+                                image={'/img/team/user.webp'}
+                                description={'Desarrollo'}
+                                contact={[
+                                ]}
+                            />
+                        </GridItem>
+
+                        <GridItem mt={-5}>
+                            <MemberCard
+                                id='pancho'
+                                name={'Pancho'}
+                                roles={['Tester', 'QA']}
+                                image={'/img/team/user.webp'}
+                                description={'Pruebas y control de calidad'}
+                                contact={[
+                                ]}
+                            />
+                        </GridItem>
+
                     </SimpleGrid>
+
                 </Center>
+                <Center>
+                    <Separator orientation={'horizontal'} width={'50%'} height={'2.5rem'} borderColor={'gray.200'} opacity={'.5'} />
+                </Center>
+                <Stack py={15} align={'center'}>
+                    {/* <Text fontSize={'3xl'} color={'gray.100'} fontWeight={'bold'}>
+                        Colaboradores
+                    </Text>
+                    <MemberCard
+                        id='pancho'
+                        name={'Pancho'}
+                        roles={[]}
+                        image={'/img/team/user.webp'}
+                        contact={[
+                        ]}
+                        compact
+                    /> */}
+                </Stack>
+                {/* <Box pb={'30dvh'} /> */}
             </Hero>
 
 
