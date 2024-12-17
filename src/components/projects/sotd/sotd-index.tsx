@@ -2,11 +2,13 @@
 import PageTitle from '@/components/layout/hero/page-title'
 import MemberCard from '@/components/team/member-card'
 import Overlay from '@/components/ui/bg/overlay'
-import { Center, Stack, Text, Image as ChakraImage, Flex, Card, SimpleGrid, GridItem, Separator } from '@chakra-ui/react'
+import MasonryGrid from '@/components/ui/masonry-grid'
+import { Center, Stack, Text, Image as ChakraImage, Flex, Card, SimpleGrid, GridItem, Separator, Box, HStack, Badge } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
+import { PhotoView } from 'react-photo-view'
 
 const SOTDIndex = () => {
 
@@ -279,6 +281,7 @@ const SOTDIndex = () => {
                         ></iframe>
 
                     </Center>
+                    <NavigationButtons previous='s4' section='gallery' />
                 </Container>
                 {/* <iframe
 
@@ -288,6 +291,112 @@ const SOTDIndex = () => {
                     allow="autoplay"
                 /> */}
 
+                <Box px={'15%'} py={100} id='gallery'>
+                    <Flex
+                        flex={1}
+                        align={{
+                            base: 'center',
+                            md: 'flex-end'
+                        }}
+                        justify={{
+                            base: 'flex-end',
+                            md: 'flex-start'
+                        }}
+                        h={'100%'}
+                        pb={'5%'}
+                        direction={{
+                            base: 'column',
+                            md: 'row'
+                        }}
+                    >
+                        <Image
+                            alt='Coal Charcoal'
+                            src='/img/team/Coal.png'
+                            width={150}
+                            height={150}
+                            objectFit='cover'
+                            style={{
+                                margin: '0 2rem',
+                                borderRadius: '50%',
+                                boxShadow: '0 1rem 1rem 5px rgba(0,0,0,0.5)'
+                            }}
+                        />
+                        <Stack>
+                            <Flex>
+                                <Text
+                                    fontSize={{
+                                        base: '3xl',
+                                        md: '5xl'
+                                    }}
+                                    color={'gray.200'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+
+                                >
+                                    Coal
+                                </Text>
+                                <Text
+                                    fontSize={{
+                                        base: '3xl',
+                                        md: '5xl'
+                                    }}
+                                    color={'main.500'}
+                                    style={{
+                                        fontWeight: 'bolder',
+                                    }}
+                                    letterSpacing={'tight'}
+                                    m={0}
+                                >
+                                    Charcoal
+                                </Text>
+                            </Flex>
+                            <HStack>
+                                <Badge>Ilustración</Badge>
+                                <Badge>Arte conceptual</Badge>
+                            </HStack>
+                        </Stack>
+                    </Flex>
+                    <MasonryGrid xlCols={5}>
+                        {
+                            ['fishman.jpg', 'muelle.jpg', '1.jpg', '2.jpg', '3.png', '7.jpg', 'cat_inter.jpg',
+                                'pueblerino.png', 'cig.png', 'hanna.jpg', 'cat.png'
+                            ].map((image, index) => {
+                                return (
+                                    <Box key={image}
+                                    // display={'block'}
+                                    >
+                                        {/* <img src="/1-thumbnail.jpg" alt="" /> */}
+                                        <PhotoView src={`/img/projects/sotd/concept/${image}`}>
+                                            <ChakraImage
+                                                src={`/img/projects/sotd/concept/${image}`}
+                                                style={{
+                                                    transition: 'all 0.05s ease',
+                                                    userSelect: 'none',
+                                                    cursor: 'pointer',
+                                                }}
+                                                _hover={{
+                                                    transform: 'scale(1.1)'
+                                                }}
+                                                draggable={false}
+                                                key={index}
+                                                objectFit={'cover'}
+                                                objectPosition={'top'}
+                                                alt={`CC ${index}`}
+                                            />
+                                        </PhotoView>
+                                    </Box>
+                                )
+                            })
+                        }
+
+                    </MasonryGrid>
+                    <Center mt={10}>
+                        <NavigationButtons previous='s5' />
+                    </Center>
+                </Box>
 
             </Stack>
         </Center >
@@ -299,7 +408,6 @@ export default SOTDIndex
 
 const Container = ({ children, id }: { children: React.ReactNode, id: string }) => {
     return <Center
-        boxShadow={'inset 0 20px 20px 20px rgba(247, 247, 247, 0.5)'}
         id={id}
         flexDir={'column'}
         position={'relative'}

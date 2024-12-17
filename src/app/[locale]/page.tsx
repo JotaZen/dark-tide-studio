@@ -1,11 +1,14 @@
 "use client"
 
 import Overlay from '@/components/ui/bg/overlay';
-import { Box, Card, Center, Flex, GridItem, Separator, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { getLocation } from '@/helpers/routesHelper';
+import mainRoutes from '@/routes/routes';
+import { Box, Button, Card, Center, Flex, GridItem, Separator, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { BsChevronDown } from 'react-icons/bs';
+import { BsChevronDown, BsChevronRight } from 'react-icons/bs';
 
 export default function Page() {
     const t = useTranslations();
@@ -15,7 +18,7 @@ export default function Page() {
     useEffect(() => {
         const i = setInterval(() => {
             setBackgroundIndex((prev) => {
-                if (prev > 2) {
+                if (prev > 4) {
                     return 0;
                 } else {
                     return prev + 1;
@@ -58,6 +61,7 @@ export default function Page() {
                     objectFit={'cover'}
                     objectPosition={'center'}
                 />
+
                 <Image
                     style={{
                         opacity: backgroundIndex === 1 ? 1 : 0,
@@ -71,7 +75,19 @@ export default function Page() {
                 />
                 <Image
                     style={{
-                        opacity: backgroundIndex === 2 ? 1 : 0,
+                        opacity: backgroundIndex === 4 ? 1 : 0,
+                        transition: 'opacity .5s',
+                    }}
+                    src={'/img/landing/hero6.png'}
+                    alt={'Hero'}
+                    layout={'fill'}
+                    objectFit={'cover'}
+                    objectPosition={'top'}
+                />
+
+                <Image
+                    style={{
+                        opacity: backgroundIndex === 3 ? 1 : 0,
                         transition: 'opacity .5s',
                     }}
                     src={'/img/landing/hero3.jpg'}
@@ -82,10 +98,21 @@ export default function Page() {
                 />
                 <Image
                     style={{
-                        opacity: backgroundIndex === 3 ? 1 : 0,
+                        opacity: backgroundIndex === 2 ? 1 : 0,
                         transition: 'opacity .5s',
                     }}
-                    src={'/img/landing/hero6.png'}
+                    src={'/img/projects/sotd/concept/muelle.jpg'}
+                    alt={'Hero'}
+                    layout={'fill'}
+                    objectFit={'cover'}
+                    objectPosition={'center'}
+                />
+                <Image
+                    style={{
+                        opacity: backgroundIndex === 5 ? 1 : 0,
+                        transition: 'opacity .5s',
+                    }}
+                    src={'/img/projects/sotd/concept/cat_inter.jpg'}
                     alt={'Hero'}
                     layout={'fill'}
                     objectFit={'cover'}
@@ -460,6 +487,24 @@ export default function Page() {
                                         layout={'fill'}
                                         objectPosition={'top'}
                                     />
+                                </Center>
+                                <Center pb={5}>
+                                    <Link
+                                        style={{
+                                            textDecoration: 'underline',
+
+                                        }}
+                                        href={getLocation() + mainRoutes.projects.path}
+                                    >
+                                        <Button
+                                            colorPalette={'blue'}
+                                            size={'lg'}
+                                            px={10}
+                                        >
+                                            <BsChevronRight />
+                                            Ver más
+                                        </Button>
+                                    </Link>
                                 </Center>
                             </GridItem>
 
