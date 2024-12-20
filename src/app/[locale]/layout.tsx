@@ -9,6 +9,7 @@ import { Provider } from "@/components/ui/provider";
 import MainLayout from "@/components/layout/main-layout";
 import Head from "next/head";
 
+
 export default async function LocaleLayout({
     children,
     params

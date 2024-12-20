@@ -15,6 +15,7 @@ import {
 import { BsList } from "react-icons/bs"
 import Logo from "../nav-bar/logo"
 import MenuLinksAll from "../nav-bar/menu-links-all"
+import LanguageSelect from "../nav-bar/language-select"
 
 const MenuDrawer = ({
     open,
@@ -51,6 +52,7 @@ const MenuDrawer = ({
                     <MenuLinksAll />
                 </DrawerBody>
                 <DrawerFooter>
+                    <LanguageSelect />
                     {/* <DrawerActionTrigger asChild>
                         <Button variant="outline">Cancel</Button>
                     </DrawerActionTrigger>

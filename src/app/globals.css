@@ -21,6 +21,7 @@ body {
 
 
 html {
+  background-color: black;
   scroll-behavior: smooth;
 }
 
@@ -111,3 +112,11 @@ body.prevent-scroll {
   /* Flechas por encima de todo */
   position: relative;
 }
+
+
+
+
+
+
+
+

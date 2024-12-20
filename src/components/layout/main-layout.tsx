@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from './nav-bar/nav-bar'
 import useScroll from '@/hooks/ui/useScroll'
 import { Box, IconButton, Separator } from '@chakra-ui/react';
@@ -8,9 +8,10 @@ import { BsChevronUp } from 'react-icons/bs';
 import Footer from './footer';
 import 'react-photo-view/dist/react-photo-view.css';
 
+import LoadingBar from "react-top-loading-bar";
 import { PhotoProvider } from 'react-photo-view';
 
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 
 const MainLayout = ({
@@ -28,8 +29,27 @@ const MainLayout = ({
     // Nav
     const [drawerOpen, setDrawerOpen] = useState(false)
 
+
+    const pathname = usePathname();
+
+
+    const [progress, setProgress] = useState(0);
+
+
+    useEffect(() => {
+        setProgress(30);
+        const timeout = setTimeout(() => {
+            setProgress(100);
+        }, 300);
+
+        return () => clearTimeout(timeout);
+    }, [pathname]);
+
+
     return (
         <>
+
+            <LoadingBar color="#0082b3" progress={progress} onLoaderFinished={() => setProgress(0)} />
 
             <NavBar
                 isScrolled={isScrolled && scrollableNavbar}
@@ -38,6 +58,8 @@ const MainLayout = ({
             />
             <Box as={'nav'}>
             </Box>
+
+
 
             <Box
                 as={'main'}
@@ -49,6 +71,7 @@ const MainLayout = ({
                     {children}
                 </PhotoProvider>
             </Box>
+
 
 
             <Separator borderColor={'gray.800'} />
