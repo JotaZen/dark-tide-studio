@@ -2,24 +2,28 @@
 
 import mainRoutes from '@/routes/routes'
 import {
-    Button, createListCollection, Flex
-    , PopoverArrow, PopoverBody, PopoverContent, PopoverRoot, PopoverTrigger, Separator, Text,
+    Box,
+    Button, createListCollection, Flex,
+    PopoverArrow, PopoverBody, PopoverContent, PopoverRoot, PopoverTrigger, Separator, Text,
     useBreakpointValue
 } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState, useTransition } from 'react'
+import React, { useEffect, useRef, useState, useTransition } from 'react'
 import Link from 'next/link';
 import Cookies from 'js-cookie'
 import { usePathname, useRouter } from 'next/navigation';
 import { BsTranslate } from 'react-icons/bs';
 import Logo from './logo'
+import MenuDrawer from '../menu/menu-drawer';
 
 const NavBar = ({
     isScrolled,
-    position = 'fixed'
+    position = 'fixed',
+    setDrawerOpen
 }: {
     isScrolled: boolean
-    position?: 'fixed' | 'absolute' | 'relative'
+    position?: 'fixed' | 'absolute' | 'relative' | 'sticky'
+    setDrawerOpen: (open: boolean) => void
 }) => {
 
     const [clientLoaded, setClientLoaded] = useState(false)
@@ -49,8 +53,24 @@ const NavBar = ({
         setClientLoaded(true)
     }, [])
 
-    const [open, setOpen] = useState(false)
 
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+
+    const previousPathname = useRef<string | null>(null);
+
+    useEffect(() => {
+        const currentPathname = pathName;
+
+        if (previousPathname.current !== null && previousPathname.current !== currentPathname) {
+            setIsDrawerOpen(false);
+            setDrawerOpen(false);
+        }
+
+        previousPathname.current = currentPathname; // Actualiza el valor de la ruta anterior
+    }, [pathName, setDrawerOpen]);
+
+
+    const [isOpen, setIsOpen] = useState(false)
     if (!clientLoaded) {
         return null
     }
@@ -66,13 +86,13 @@ const NavBar = ({
                 pos={position}
                 direction={'column'}
                 flex={1}
-                bg={isScrolled ? 'gray.950' : 'transparent'}
                 style={{
                     zIndex: 1000,
                     transition: 'all 0.3s',
                 }}
-                opacity={clientLoaded ? 1 : 0}
+                opacity={(clientLoaded) ? 1 : 0}
                 zIndex={1001}
+
             >
 
                 {/* <Flex
@@ -99,15 +119,23 @@ const NavBar = ({
                 </Flex> */}
 
                 <Flex
-                    padding={5}
-                    justify={'center'}
+                    py={5}
+                    pl={5}
+                    justify={{
+                        base: 'space-around',
+                        md: 'center'
+                    }}
+                    align={'center'}
                     flex={1}
-                    direction={{
-                        base: 'column',
-                        md: 'row'
-                    }}>
+                    transition={'all 0.2s'}
+                    className={isScrolled ? 'glass-dark' : ''}
+                    borderRadius={0}
+                    // bg={isScrolled ? 'gray.950' : 'transparent'}
+                    pr={isDrawerOpen ? '5rem' : 0}
+                    opacity={isDrawerOpen ? 0 : 1}
+                >
 
-                    <Logo  />
+                    <Logo />
 
                     <Separator
                         hidden={isMobile}
@@ -146,14 +174,15 @@ const NavBar = ({
                                 {t(mainRoutes.team.titleId)}
                             </Text>
                         </Link>
-                        {/* <Link href={locale + mainRoutes.aboutUs.path}>
+                        <Link href={locale + mainRoutes.aboutUs.path}>
                             <Text color={(pathName === locale + mainRoutes.aboutUs.path)
                                 ? 'main.500'
-                                : isScrolled ? 'gray.600' : 'gray.200'}
+                                : isScrolled ? 'gray.100' : 'gray.200'}
                             >
                                 {t(mainRoutes.aboutUs.titleId)}
                             </Text>
-                        </Link> */}
+                        </Link>
+
                     </Flex>
 
                     <Separator hidden={isMobile}
@@ -165,16 +194,21 @@ const NavBar = ({
                                 placement: 'bottom',
 
                             }}
-                            open={open}
-                            onOpenChange={(e) => setOpen(e.open)}
+                            open={isOpen}
+                            onOpenChange={(e) => setIsOpen(e.open)}
                         >
                             <PopoverTrigger
-                                as={Button}
-                                colorPalette={isScrolled ? 'blue' : 'blue'}
-                                height={'2.5rem'}
+                                asChild
+
                             >
-                                {t("general.language")}
-                                <BsTranslate />
+                                <Button
+                                    colorPalette={isScrolled ? 'blue' : 'blue'}
+                                    height={'2.5rem'}
+                                    variant={'solid'}
+                                >
+                                    {t("general.language")}
+                                    <BsTranslate />
+                                </Button>
                             </PopoverTrigger>
                             <PopoverContent
                                 position="absolute"
@@ -207,9 +241,20 @@ const NavBar = ({
                             </PopoverContent>
                         </PopoverRoot>
                     </Flex>
-                </Flex >
 
+
+                    <Box ml={3}>
+                        <MenuDrawer
+                            open={isDrawerOpen}
+                            setOpen={(e) => {
+                                setDrawerOpen(e)
+                                setIsDrawerOpen(e)
+                            }}
+                        />
+                    </Box>
+                </Flex >
             </Flex >
+
         </>
     )
 }

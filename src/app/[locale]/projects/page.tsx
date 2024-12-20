@@ -1,29 +1,24 @@
-"use client"
-
 import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
 import SOTDIndex from '@/components/projects/sotd/sotd-index'
 import ScrollButton from '@/components/ui/buttons/scroll-button'
 import { Flex } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import React, { useEffect } from 'react'
+import { getTranslations } from 'next-intl/server'
+import React from 'react'
 
+export async function generateMetadata() {
+    const t = await getTranslations();
 
+    return {
+        title: t("routes.projects.title"),
+        description: t("routes.projects.description"),
+    }
+}
 
 const Page = () => {
 
     const t = useTranslations()
-    const router = useRouter()
-    const path = usePathname()
-    const params = useSearchParams()
-
-
-    useEffect(() => {
-        if (params.get('no_scroll') !== '1') {
-            router.replace(path + '?no_scroll=1')
-        }
-    }, [params, path, router])
 
     return (
         <>

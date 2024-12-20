@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './nav-bar/nav-bar'
 import useScroll from '@/hooks/ui/useScroll'
-import { IconButton, Separator } from '@chakra-ui/react';
+import { Box, IconButton, Separator } from '@chakra-ui/react';
 import { BsChevronUp } from 'react-icons/bs';
 import Footer from './footer';
 import 'react-photo-view/dist/react-photo-view.css';
@@ -24,20 +24,42 @@ const MainLayout = ({
 
     const scrollableNavbar = params.get('no_scroll') !== '1'
 
+
+    // Nav
+    const [drawerOpen, setDrawerOpen] = useState(false)
+
     return (
         <>
+
             <NavBar
                 isScrolled={isScrolled && scrollableNavbar}
-                position={scrollableNavbar ? 'fixed' : 'absolute'}
+                position={(scrollableNavbar) ? 'fixed' : 'sticky'}
+                setDrawerOpen={setDrawerOpen}
             />
+            <Box as={'nav'}>
+            </Box>
 
-            <PhotoProvider>
-                {children}
-            </PhotoProvider>
+            <Box
+                as={'main'}
+                px={drawerOpen ? 5 : 0}
+                pt={drawerOpen ? 5 : 0}
+                transition={'padding 0.3s'}
+            >
+                <PhotoProvider>
+                    {children}
+                </PhotoProvider>
+            </Box>
 
 
             <Separator borderColor={'gray.800'} />
-            <Footer />
+            <Footer
+                navBar={
+                    <NavBar
+                        setDrawerOpen={setDrawerOpen}
+                        isScrolled={false} position='relative'
+                    />
+                }
+            />
 
             <IconButton
                 position={'fixed'}
@@ -57,6 +79,9 @@ const MainLayout = ({
                     })
                 }}
             />
+
+
+
         </>
     )
 }

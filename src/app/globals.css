@@ -1,12 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  transition-property: background, color, transform, filter, opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
 }
 
+.page-transition {
+  opacity: 0;
+  background: black;
+  transform: translateY('40px');
+  transform: translateX(10rem);
+}
+
+
 html {
-  overflow-y: scroll;
   scroll-behavior: smooth;
+}
+
+.scroll-bar-gutter {
+  scrollbar-gutter: stable both-edges;
 }
 
 .marquee {
@@ -62,12 +81,12 @@ body.prevent-scroll {
 
 .glass-dark {
   /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.80);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(19px);
   -webkit-backdrop-filter: blur(19px);
-  border: 1px solid rgba(0, 0, 0, 0.65);
+
 }
 
 .carousel-container {
@@ -75,16 +94,20 @@ body.prevent-scroll {
 }
 
 .react-multi-carousel-item {
-  z-index: 1; /* Ajusta el valor según la necesidad */
-  position: relative; /* Asegura que el z-index funcione */
+  z-index: 1;
+  /* Ajusta el valor según la necesidad */
+  position: relative;
+  /* Asegura que el z-index funcione */
 }
 
 .react-multi-carousel-dot-list {
-  z-index: 10; /* Asegura que los dots estén por encima */
+  z-index: 10;
+  /* Asegura que los dots estén por encima */
   position: relative;
 }
 
 .react-multi-carousel-arrow {
-  z-index: 15; /* Flechas por encima de todo */
+  z-index: 15;
+  /* Flechas por encima de todo */
   position: relative;
 }

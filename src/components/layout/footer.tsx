@@ -3,12 +3,18 @@ import React from 'react'
 
 import { Center, Flex, Separator, Stack, Text } from '@chakra-ui/react';
 
-import NavBar from './nav-bar/nav-bar';
 
-const Footer = () => {
+const Footer = ({
+    navBar
+}: {
+    navBar: React.ReactNode
+}) => {
 
     return <>
-        <Center pt={20} bgColor={'gray.950'} flexDir={'column'} gap={5} pb={10} flex={1} w={'100%'}>
+        <Center pt={20}
+         bgColor={'gray.950'}
+         className='glass-dark'
+         flexDir={'column'} gap={5} pb={10} flex={1} w={'100%'}>
             <Flex>
 
                 {/* <Logo inverted />
@@ -23,7 +29,7 @@ const Footer = () => {
                         {t(mainRoutes.projects.titleId)}
                     </Text>
                 </Link> */}
-                <NavBar isScrolled={true} position='relative' />
+                {navBar}
             </Flex>
             <Stack mt={10} flex={1} w={'100%'} textAlign={'center'} >
                 <Separator borderColor={'gray.500'} flex={1} maxW={'20rem'} margin={'0 auto'} />

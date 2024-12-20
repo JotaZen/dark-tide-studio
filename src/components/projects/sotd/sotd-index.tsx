@@ -1,3 +1,4 @@
+"use client";
 
 import PageTitle from '@/components/layout/hero/page-title'
 import Logo from '@/components/layout/nav-bar/logo'

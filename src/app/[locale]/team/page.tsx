@@ -3,8 +3,19 @@ import PageTitle from '@/components/layout/hero/page-title'
 import MemberCard from '@/components/team/member-card'
 import { Box, Center, GridItem, Separator, SimpleGrid, Stack } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import React from 'react'
 import { BsGithub, BsGlobe, BsInstagram } from 'react-icons/bs'
+
+
+export async function generateMetadata() {
+    const t = await getTranslations();
+
+    return {
+        title: t("routes.team.title"),
+        description: t("routes.team.description"),
+    }
+}
 
 const Page = () => {
 

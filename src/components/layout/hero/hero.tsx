@@ -47,7 +47,7 @@ const Hero = ({
     return (
         <Flex
             bg={'#0f0f0f'}
-            h={height}
+            minH={height}
             w={'100%'}
             p={0}
 
