@@ -29,8 +29,9 @@ export default async function LocaleLayout({
                 } />
                 {/* <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" /> */}
                 <link rel="shortcut icon" href="/img/favicon.ico" />
-                <link rel="icon" type="img/png" sizes="32x32" href="/images/favicon-32x32.png" />
-                <link rel="icon" type="img/png" sizes="16x16" href="/images/favicon-16x16.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+                <link rel="manifest" href="/site.webmanifest" />
 
                 <link rel="alternate" hrefLang="en" href="/en" />
                 <link rel="alternate" hrefLang="es" href="/es" />
@@ -53,8 +54,8 @@ export default async function LocaleLayout({
 
 export const metadata = {
     icons: {
-        icon: '/icon.png',
-        shortcut: '/icon.png',
-        apple: '/apple-touch-icon.png',
+        icon: '/img/icon.png',
+        shortcut: '/img/icon.png',
+        apple: '/img/apple-touch-icon.png',
     },
 }
