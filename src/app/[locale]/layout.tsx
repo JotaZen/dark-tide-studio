@@ -45,3 +45,11 @@ export default async function LocaleLayout({
         </html >
     );
 }
+
+export const metadata = {
+    icons: {
+        icon: '/icon.png',
+        shortcut: '/icon.png',
+        apple: '/apple-touch-icon.png',
+    },
+}
