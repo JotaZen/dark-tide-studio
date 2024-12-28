@@ -4,10 +4,8 @@
 import "react-multi-carousel/lib/styles.css";
 import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import seoKeywords from "@/constants/text/keywords";
 import { Provider } from "@/components/ui/provider";
 import MainLayout from "@/components/layout/main-layout";
-import Head from "next/head";
 
 
 export default async function LocaleLayout({
@@ -23,14 +21,21 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} suppressHydrationWarning>
-            <Head>
+            <head>
                 <title>{t('metadata.title')}</title>
                 <meta name="description" content={t('metadata.description')} />
                 <meta name="keywords" content={
-                    seoKeywords
+                    t('metadata.keywords')
                 } />
-                <link rel="icon" href="/logo.png" />
-            </Head>
+                {/* <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" /> */}
+                <link rel="shortcut icon" href="/img/favicon.ico" />
+                <link rel="icon" type="img/png" sizes="32x32" href="/images/favicon-32x32.png" />
+                <link rel="icon" type="img/png" sizes="16x16" href="/images/favicon-16x16.png" />
+
+                <link rel="alternate" hrefLang="en" href="/en" />
+                <link rel="alternate" hrefLang="es" href="/es" />
+                <link rel="alternate" hrefLang="x-default" href="/" />
+            </head>
             <body>
                 <Provider>
                     <NextIntlClientProvider
