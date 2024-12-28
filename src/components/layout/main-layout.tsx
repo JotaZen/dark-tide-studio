@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from './nav-bar/nav-bar'
 import useScroll from '@/hooks/ui/useScroll'
-import { Box, IconButton, Separator } from '@chakra-ui/react';
+import { Box, IconButton, Separator, useBreakpointValue } from '@chakra-ui/react';
 import { BsChevronUp } from 'react-icons/bs';
 import Footer from './footer';
 import 'react-photo-view/dist/react-photo-view.css';
@@ -45,6 +45,10 @@ const MainLayout = ({
         return () => clearTimeout(timeout);
     }, [pathname]);
 
+    const isMobile = useBreakpointValue({
+        base: true,
+        md: false
+    })
 
     return (
         <>
@@ -63,8 +67,8 @@ const MainLayout = ({
 
             <Box
                 as={'main'}
-                px={drawerOpen ? 5 : 0}
-                pt={drawerOpen ? 5 : 0}
+                px={!isMobile && drawerOpen ? 5 : 0}
+                pt={!isMobile && drawerOpen ? 5 : 0}
                 transition={'padding 0.3s'}
             >
                 <PhotoProvider>
