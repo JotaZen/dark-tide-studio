@@ -10,6 +10,7 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsChevronRight } from 'react-icons/bs';
+import Markdown from 'react-markdown';
 
 
 export async function generateMetadata() {
@@ -267,6 +268,7 @@ export default function Page() {
                                             px={10}
                                         >
                                             <BsChevronRight />
+                                            <Markdown>```Monospace```</Markdown>
                                             Ver más
                                         </Button>
                                     </Link>
