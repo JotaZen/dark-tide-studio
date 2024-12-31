@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from './nav-bar/nav-bar'
 import useScroll from '@/hooks/ui/useScroll'
-import { Box, IconButton, Separator, useBreakpointValue } from '@chakra-ui/react';
+import { Box, IconButton, Separator, useBreakpointValue, } from '@chakra-ui/react';
 import { BsChevronUp } from 'react-icons/bs';
 import Footer from './footer';
 import 'react-photo-view/dist/react-photo-view.css';
@@ -61,6 +61,7 @@ const MainLayout = ({
                 setDrawerOpen={setDrawerOpen}
             />
             <Box as={'nav'}>
+                {drawerOpen && <></>}
             </Box>
 
 

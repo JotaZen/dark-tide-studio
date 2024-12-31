@@ -123,7 +123,7 @@ const NavBar = ({
                     className={isScrolled ? 'glass-dark' : ''}
                     borderRadius={0}
                     // bg={isScrolled ? 'gray.950' : 'transparent'}
-                    pr={isDrawerOpen ? '5rem' : 0}
+                    // pr={isDrawerOpen ? '5rem' : 0}
 
                 >
 

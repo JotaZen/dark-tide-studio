@@ -1,8 +1,8 @@
 "use client"
 
 import MasonryGrid from '@/components/ui/masonry-grid'
-import { Box, Image } from '@chakra-ui/react'
-// import Image from 'next/image'
+import { Box } from '@chakra-ui/react'
+import Image from 'next/image'
 import React from 'react'
 import { PhotoView } from 'react-photo-view'
 
