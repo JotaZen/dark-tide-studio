@@ -1,5 +1,6 @@
 import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
+import SOTDCard from '@/components/projects/sotd/sotd-card'
 import ScrollButton from '@/components/ui/buttons/scroll-button'
 import { Flex } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
@@ -51,7 +52,7 @@ const Page = () => {
                 <ScrollButton />
             </Hero >
 
-
+            <SOTDCard />
         </>
     )
 }

@@ -23,6 +23,11 @@ body {
 html {
   background-color: black;
   scroll-behavior: smooth;
+  
+}
+
+.PhotoView-Slider__ArrowRight {
+  margin-right: 1rem !important;
 }
 
 .scroll-bar-gutter {
@@ -112,11 +117,3 @@ body.prevent-scroll {
   /* Flechas por encima de todo */
   position: relative;
 }
-
-
-
-
-
-
-
-
