@@ -1,7 +1,7 @@
 import Overlay from '@/components/ui/bg/overlay'
 import { getLocation } from '@/helpers/routesHelper'
 import { projectRoutes } from '@/routes/routes'
-import { Button, Card, Center, Flex, GridItem, Heading, Separator, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { Button, Center, Flex, GridItem, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
