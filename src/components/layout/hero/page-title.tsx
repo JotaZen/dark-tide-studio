@@ -1,4 +1,4 @@
-import { Flex, Stack, Text } from '@chakra-ui/react'
+import { Flex, Heading, Stack } from '@chakra-ui/react'
 import React from 'react'
 
 const PageTitle = ({
@@ -33,7 +33,7 @@ const PageTitle = ({
                     pl={leftPadding}>
 
                     {title && <Flex>
-                        <Text
+                        <Heading
                             fontSize={{
                                 base: 'md',
                                 md: 'xl'
@@ -42,13 +42,13 @@ const PageTitle = ({
                             style={{
                                 fontWeight: 'bolder',
                             }}
+                            as={'h2'}
                             letterSpacing={'tight'}
                             m={0}
-                            mt={-3}
                         >
                             Dark
-                        </Text>
-                        <Text
+                        </Heading>
+                        <Heading
                             fontSize={{
                                 base: 'md',
                                 md: 'xl'
@@ -57,13 +57,13 @@ const PageTitle = ({
                             style={{
                                 fontWeight: 'bolder',
                             }}
+                            as={'h2'}
                             letterSpacing={'tight'}
                             m={0}
-                            mt={-3}
                         >
                             Tide
-                        </Text>
-                        <Text
+                        </Heading>
+                        <Heading
                             fontSize={{
                                 base: 'md',
                                 md: 'xl'
@@ -72,15 +72,15 @@ const PageTitle = ({
                             style={{
                                 fontWeight: 'bolder',
                             }}
+                            as={'h2'}
                             letterSpacing={'tight'}
                             m={0}
-                            mt={-3}
                         >
                             Studio
-                        </Text>
+                        </Heading>
                     </Flex>}
 
-                    <Text
+                    <Heading
                         fontSize={{
                             base: '3xl',
                             md: '5xl'
@@ -91,10 +91,11 @@ const PageTitle = ({
                         }}
                         letterSpacing={'tight'}
                         m={0}
-                        mt={-3}
+                        mt={3}
+                        as={'h1'}
                     >
                         {title}
-                    </Text>
+                    </Heading>
                     {leftChildren}
 
                 </Stack >

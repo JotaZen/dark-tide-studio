@@ -53,7 +53,7 @@ const Hero = ({
 
             style={{ position: 'relative' }}
             flex={1}
-       
+
         >
 
             {

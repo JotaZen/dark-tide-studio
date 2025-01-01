@@ -126,8 +126,9 @@ const NavBar = ({
                     pr={isDrawerOpen ? '5rem' : 0}
 
                 >
-
-                    <Logo />
+                    <Link href={locale + mainRoutes.home.path}>
+                        <Logo />
+                    </Link>
 
                     <Separator
                         hidden={isMobile}

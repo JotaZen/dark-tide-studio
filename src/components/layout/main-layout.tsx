@@ -68,8 +68,8 @@ const MainLayout = ({
 
             <Box
                 as={'main'}
-                px={!isMobile && drawerOpen ? 5 : 0}
-                pt={!isMobile && drawerOpen ? 5 : 0}
+                px={(!isMobile && drawerOpen && !isScrolled) ? 5 : 0}
+                pt={(!isMobile && drawerOpen && !isScrolled) ? 5 : 0}
                 transition={'padding 0.3s'}
             >
                 <PhotoProvider>
