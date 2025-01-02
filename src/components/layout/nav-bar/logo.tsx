@@ -8,12 +8,9 @@ const Logo = ({
     inverted?: boolean
 }) => {
     return (
-        <Flex align={'center'} justify={'center'} position={'relative'}>
+        <Flex align={'center'} justify={'center'} position={'relative'} gap={1}>
             <Image
-                style={{
-                    marginTop: '-0.5rem',
-                }}
-                src={'/logo.png'}
+                src={'/img/logo.png'}
                 alt={'Logo'}
                 width={50}
                 height={50}

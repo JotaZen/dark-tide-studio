@@ -53,7 +53,7 @@ const PageTitle = ({
                                 base: 'md',
                                 md: 'xl'
                             }}
-                            color={'main.500'}
+                            color={'main.400'}
                             style={{
                                 fontWeight: 'bolder',
                             }}
