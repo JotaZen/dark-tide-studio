@@ -12,8 +12,8 @@ const Logo = ({
             <Image
                 src={'/img/logo.png'}
                 alt={'Logo'}
-                width={50}
-                height={50}
+                width={40}
+                height={40}
             />
 
             <Flex>
