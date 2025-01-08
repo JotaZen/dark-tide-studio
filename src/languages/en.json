@@ -31,6 +31,10 @@
         "home": {
             "quote_hero_1": "Game",
             "quote_hero_2": "Development"
+        },
+        "404": {
+            "title": "Page not found",
+            "description": "The page you are looking for does not exist."
         }
     },
     "team": {

@@ -11,9 +11,8 @@ export default async function LocaleLayout({
 
 export const metadata = {
     icons: {
-        icon: '/img/icon.png',
+        icon: '/img/logo.png',
         shortcut: '/img/favicon.ico',
         apple: '/img/apple-touch-icon.png',
-    },
-    manifest: '/site.webmanifest'
+    }
 }
