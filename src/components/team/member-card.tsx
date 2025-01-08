@@ -38,7 +38,7 @@ const MemberCard = ({
         e.preventDefault()
         e.stopPropagation()
         if (mounted) {
-            router.replace(getRoute('team', "/" + id))
+            router.replace(getRoute('/team', "/" + id))
         }
     }
 
