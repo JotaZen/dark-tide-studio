@@ -5,13 +5,16 @@ import { Badge, Box, Flex, HStack, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
-import { Metadata } from 'next';
 import ScrollButton from '@/components/ui/buttons/scroll-button'
 
-export const metadata: Metadata = {
-    title: 'Coal Charcoal',
-    description:
-        'Ilustración y arte conceptual de Coal Charcoal.',
+
+export async function generateMetadata() {
+    // const t = await getTranslations();
+
+    return {
+        title: "Coal Charcoal",
+        description: "Ilustración y arte conceptual de Coal Charcoal.",
+    }
 }
 
 // export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {

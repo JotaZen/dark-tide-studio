@@ -56,6 +56,7 @@ const MainLayout = ({
             <LoadingBar color="#0082b3" progress={progress} onLoaderFinished={() => setProgress(0)} />
 
             <NavBar
+                showMenu
                 isScrolled={isScrolled && scrollableNavbar}
                 position={(scrollableNavbar) ? 'fixed' : 'sticky'}
                 setDrawerOpen={setDrawerOpen}

@@ -18,10 +18,12 @@ import LanguageSelect from './language-select';
 
 const NavBar = ({
     isScrolled,
+    showMenu,
     position = 'fixed',
     setDrawerOpen
 }: {
     isScrolled: boolean
+    showMenu?: boolean
     position?: 'fixed' | 'absolute' | 'relative' | 'sticky'
     setDrawerOpen: (open: boolean) => void
 }) => {
@@ -178,7 +180,7 @@ const NavBar = ({
                     </Flex>
 
 
-                    <Box ml={3}>
+                    <Box ml={3} hidden={!showMenu}>
                         <MenuDrawer
                             open={isDrawerOpen}
                             setOpen={(e) => {
