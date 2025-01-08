@@ -41,7 +41,7 @@ const Page = () => {
 
             >
                 <iframe
-                    src="https://itch.io/embed-upload/12448511?color=333333"
+                    src="https://itch.io/embed-upload/12448731?color=333333"
                     aria-label="Huaso Showdown"
                     style={{
                         zIndex: 1,
