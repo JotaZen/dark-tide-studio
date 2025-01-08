@@ -57,6 +57,8 @@ const MemberCard = ({
             }
             height={'100%'}
             overflow="hidden"
+            border={'none'}
+            borderRadius={'xl'}
             maxW="xl"
             onClick={perfilNavigation}
             className='glass-dark'

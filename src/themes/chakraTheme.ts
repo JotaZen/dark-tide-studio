@@ -19,6 +19,7 @@ const config = defineConfig({
           800: { value: "#00394d" },
           900: { value: "#00141a" },
         },
+
         main: {
           50: { value: "#e0f7ff" },
           100: { value: "#b3eaff" },

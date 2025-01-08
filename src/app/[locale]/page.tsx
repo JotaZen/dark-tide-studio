@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Flex } from '@chakra-ui/react';
 import SOTDCard from '@/components/projects/sotd/sotd-card';
+import HighlightGallery from '@/components/ui/galleries/highlight-gallery';
 
 export async function generateMetadata() {
     const t = await getTranslations();
@@ -26,6 +27,10 @@ export default function Page() {
                 height={'100dvh'}
                 images={[
                     {
+                        src: '/img/projects/sotd/concept/cat_inter.jpg',
+                        objectPosition: 'top'
+                    },
+                    {
                         src: '/img/landing/hero1.png',
                     },
                     {
@@ -43,10 +48,7 @@ export default function Page() {
                     {
                         src: '/img/projects/sotd/concept/muelle.jpg',
                     },
-                    {
-                        src: '/img/projects/sotd/concept/cat_inter.jpg',
-                        objectPosition: 'top'
-                    }
+
                 ]}
             >
                 <Stack flex={1} justify={'center'} align={'start'} position={'relative'} zIndex={2}
@@ -143,8 +145,7 @@ export default function Page() {
                 <ScrollButton />
 
             </Hero>
-
-
+            <HighlightGallery />
             <SOTDCard />
 
 

@@ -38,4 +38,15 @@ export const projectRoutes: Routes = {
     titleId: "Sons of the Depths",
     path: "/projects/sotd",
   },
+  huasoShowdown: {
+    titleId: "Huaso Showdown",
+    path: "/projects/huaso-showdown",
+  },
+};
+
+export const teamRoutes: Routes = {
+  coal: {
+    titleId: "Coal Charcoal",
+    path: "/team/coal-charcoal",
+  },
 };

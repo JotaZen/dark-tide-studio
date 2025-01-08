@@ -544,16 +544,20 @@ const SOTDIndex = () => {
                                     >
                                         {/* <img src="/1-thumbnail.jpg" alt="" /> */}
                                         <PhotoView src={`/img/projects/sotd/concept/${image}`}>
-                                            <ChakraImage
+                                            <Image
                                                 src={`/img/projects/sotd/concept/${image}`}
                                                 style={{
-                                                    transition: 'all 0.05s ease',
-                                                    userSelect: 'none',
                                                     cursor: 'pointer',
+                                                    transition: 'transform 0.05s ease'
                                                 }}
-                                                _hover={{
-                                                    transform: 'scale(1.1)'
+                                                onMouseOver={(e) => {
+                                                    e.currentTarget.style.transform = 'scale(1.1)'
                                                 }}
+                                                onMouseOut={(e) => {
+                                                    e.currentTarget.style.transform = 'scale(1.0)'
+                                                }}
+                                                width={500}
+                                                height={500}
                                                 draggable={false}
                                                 key={index}
                                                 objectFit={'cover'}
@@ -574,16 +578,20 @@ const SOTDIndex = () => {
                             [
                                 <Box key={'4'}>
                                     <PhotoView src={`/img/projects/sotd/concept/sb4.jpg`}>
-                                        <ChakraImage
+                                        <Image
                                             src={`/img/projects/sotd/concept/sb4.jpg`}
                                             style={{
-                                                transition: 'all 0.05s ease',
-                                                userSelect: 'none',
                                                 cursor: 'pointer',
+                                                transition: 'transform 0.05s ease'
                                             }}
-                                            _hover={{
-                                                transform: 'scale(1.1)'
+                                            onMouseOver={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.1)'
                                             }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.0)'
+                                            }}
+                                            width={500}
+                                            height={500}
                                             draggable={false}
                                             objectFit={'cover'}
                                             objectPosition={'top'}
@@ -593,16 +601,20 @@ const SOTDIndex = () => {
                                 </Box>,
                                 <Box key={'3'}>
                                     <PhotoView src={`/img/projects/sotd/concept/sb3.jpg`}>
-                                        <ChakraImage
+                                        <Image
                                             src={`/img/projects/sotd/concept/sb3.jpg`}
                                             style={{
-                                                transition: 'all 0.05s ease',
-                                                userSelect: 'none',
                                                 cursor: 'pointer',
+                                                transition: 'transform 0.05s ease'
                                             }}
-                                            _hover={{
-                                                transform: 'scale(1.1)'
+                                            onMouseOver={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.1)'
                                             }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.0)'
+                                            }}
+                                            width={500}
+                                            height={500}
                                             draggable={false}
                                             objectFit={'cover'}
                                             objectPosition={'top'}
@@ -612,16 +624,20 @@ const SOTDIndex = () => {
                                 </Box>,
                                 <Box key={'2'}>
                                     <PhotoView src={`/img/projects/sotd/concept/sb2.jpg`}>
-                                        <ChakraImage
+                                        <Image
                                             src={`/img/projects/sotd/concept/sb2.jpg`}
                                             style={{
-                                                transition: 'all 0.05s ease',
-                                                userSelect: 'none',
                                                 cursor: 'pointer',
+                                                transition: 'transform 0.05s ease'
                                             }}
-                                            _hover={{
-                                                transform: 'scale(1.1)'
+                                            onMouseOver={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.1)'
                                             }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.0)'
+                                            }}
+                                            width={500}
+                                            height={500}
                                             draggable={false}
                                             objectFit={'cover'}
                                             objectPosition={'top'}
@@ -631,16 +647,20 @@ const SOTDIndex = () => {
                                 </Box>,
                                 <Box key={'1'}>
                                     <PhotoView src={`/img/projects/sotd/concept/sb1.jpg`}>
-                                        <ChakraImage
+                                        <Image
                                             src={`/img/projects/sotd/concept/sb1.jpg`}
                                             style={{
-                                                transition: 'all 0.05s ease',
-                                                userSelect: 'none',
                                                 cursor: 'pointer',
+                                                transition: 'transform 0.05s ease'
                                             }}
-                                            _hover={{
-                                                transform: 'scale(1.1)'
+                                            onMouseOver={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.1)'
                                             }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.transform = 'scale(1.0)'
+                                            }}
+                                            width={500}
+                                            height={500}
                                             draggable={false}
                                             objectFit={'cover'}
                                             objectPosition={'top'}

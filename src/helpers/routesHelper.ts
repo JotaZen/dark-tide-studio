@@ -5,9 +5,12 @@ export const getLocation = () => {
   return "/" + (Cookies.get("NEXT_LOCALE") || "es");
 };
 
-export const getRoute = (route: string, additionalPath?: string) => {
+export const getMainRoute = (route: string, additionalPath?: string) => {
   if (Object.keys(mainRoutes).includes(route)) {
     return getLocation() + mainRoutes[route].path + (additionalPath || "");
   }
   return getLocation() + "/404";
+};
+export const getRoute = (route: string, additionalPath?: string) => {
+  return getLocation() + route + (additionalPath || "");
 };
