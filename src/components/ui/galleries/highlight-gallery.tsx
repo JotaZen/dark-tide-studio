@@ -131,14 +131,15 @@ const HighlightGallery = () => {
                     description="Sons of the Depths, un videojuego de survival horror"
                 />
                 <InfoCard
-                    image="/img/projects/huaso-showdown/jam.png"
+                    image="/img/projects/huaso-showdown/jam_sq.png"
                     badges={["Videojuegos", "JAM"]}
                     title="Huaso Showdown"
-                    imagePosition="bottom"
+                    imageFit="contain"
+                    imagePosition="top"
                     url={getRoute(projectRoutes.huasoShowdown.path)}
                     description="Boss Rush JAM con temática chilena"
                 />
-
+                <Box px={8} />
 
             </Flex>
 

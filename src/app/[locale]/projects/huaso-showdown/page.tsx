@@ -36,7 +36,7 @@ const Page = () => {
                 flexDir={'column'}
                 position={'relative'}
                 width={'100%'}
-                height={'100dvh'}
+                height={'100vh'}
                 objectFit={'cover'}
 
             >

@@ -1,7 +1,8 @@
 import Overlay from '@/components/ui/bg/overlay'
+import HeadingGradient from '@/components/ui/text/heading-gradient'
 import { getLocation } from '@/helpers/routesHelper'
 import { projectRoutes } from '@/routes/routes'
-import { Button, Center, Flex, GridItem, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { Button, Center, Flex, GridItem, Separator, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -15,6 +16,7 @@ const SOTDCard = () => {
             width={'100%'}
             minH={'100dvh'}
             objectFit={'cover'}
+            color={'white'}
         >
 
             <Image
@@ -51,10 +53,10 @@ const SOTDCard = () => {
                     </Center> */}
                     {/* <Separator borderColor={'gray.600'} my={10} /> */}
                     <Stack width={'80%'} mx={'auto'} justify={'end'} h={'100%'}>
-                        <Heading size={'4xl'}>
+                        <HeadingGradient>
                             Sons of the Depths
-                        </Heading>
-
+                        </HeadingGradient>
+                        <Separator borderColor={'gray.600'} mb={5} />
                         <Text textAlign={'justify'}>
                             <b>Sons of the Depths</b> es un videojuego de survival horror en tercera persona que toma inspiración del horror cósmico y las obras de H.P. Lovecraft.
                             Ambientado en un pueblo costero en Rusia, cerca del Ártico,

@@ -15,15 +15,13 @@ body {
 .page-transition {
   opacity: 0;
   background: black;
-  transform: translateY('40px');
+  transform: translateY("40px");
   transform: translateX(10rem);
 }
-
 
 html {
   background-color: black;
   scroll-behavior: smooth;
-
 }
 
 .PhotoView-Slider__ArrowRight {
@@ -83,15 +81,12 @@ body.prevent-scroll {
   margin-right: calc(100vw - 100%);
 }
 
-
-
 .glass-dark {
   /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.80);
+  background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(19px);
   backdrop-filter: blur(19px);
-
 }
 
 .carousel-container {
@@ -115,4 +110,40 @@ body.prevent-scroll {
   z-index: 15;
   /* Flechas por encima de todo */
   position: relative;
+}
+
+.image-with-overlay {
+  position: relative;
+}
+
+.image-with-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+  /* Importante: no bloquea los clics */
+}
+
+.clip-custom-1 {
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 0,
+    100% 80%,
+    19% 80%,
+    0 88%,
+    0% 80%,
+    0 8%
+  );
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r text-transparent bg-clip-text inline-block;
+  display: inline-block;
+  background-image: linear-gradient(to right, red, white, blue);
+  /* color: var(--chakra-colors-main-500); */
 }
