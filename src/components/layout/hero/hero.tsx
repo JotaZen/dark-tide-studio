@@ -53,6 +53,17 @@ const Hero = ({
 
             style={{ position: 'relative' }}
             flex={1}
+            zIndex={1}
+            _after={{
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: '100%',
+                height: '10px',
+                boxShadow: '0 -4.5rem 3rem 4rem var(--chakra-colors-main-800)',
+                zIndex: -1,
+            }}
 
         >
 

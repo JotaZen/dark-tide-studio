@@ -13,7 +13,7 @@ const HeadingGradient = ({
             <Heading
                 fontWeight={"extrabold"}
                 size={size}
-                backgroundImage="linear-gradient(to right, var(--chakra-colors-main-300), var(--chakra-colors-main-500))"
+                backgroundImage="linear-gradient(to right, var(--chakra-colors-main-300), var(--chakra-colors-main-500),var(--chakra-colors-main-600))"
                 bgClip="text"
                 display={"inline-block"}
             >

@@ -24,61 +24,56 @@ const InfoCard = ({
 }) => {
     return (
         <Box
-            width={"30rem"}
+            minW={"22rem"}
+            width={'100%'}
             position={'relative'}
+            borderRadius={'.5rem'}
+            className="glass-dark"
+            transition={'all 0.3s'}
+            _hover={{
+                boxShadow: '0 0 1rem .5rem var(--chakra-colors-main-501)', // Glow dinámico
+                transform: 'translateY(-.5rem)',
+            }}
         >
-            <Box
-                position={'relative'}
-                zIndex={4}
+            <Link
+                href={url}
             >
                 <Box
-                    width={'100%'}
-                    height={'22rem'}
                     position={'relative'}
+                    zIndex={4}
                 >
-                    <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className='glass-dark image-with-overlay'
-                        style={{
-                            objectFit: imageFit,
-                            objectPosition: imagePosition,
-                            transition: 'transform 0.05s ease',
-                            clipPath: 'polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 19% 80%, 0 88%, 0% 80%, 0 8%)', // Cambia esta forma según lo que necesites
-                            borderLeft: '.3rem solid var(--chakra-colors-main-500)',
-                            userSelect: 'none'
-                        }}
-                        draggable={false}
-                    />
+                    <Box
+                        width={'100%'}
+                        height={'18rem'}
+                        position={'relative'}
 
-
-
-                </Box>
-                <Box
-                    position={'absolute'}
-                    right={3}
-                    bottom={12}
-
-                >
-                    <Link
-                        href={url}
                     >
-                        <Button
-                            colorPalette={'white'}
-                            px={5}
-                            fontWeight={'bold'}
-                        >
-                            {title}
-                            <BsChevronRight
-                                size={25}
-                            />
-                        </Button>
-                    </Link>
-                </Box>
-            </Box>
+                        <Image
+                            src={image}
+                            alt={title}
+                            fill
+                            className='image-with-overlay'
+                            style={{
+                                objectFit: imageFit,
+                                objectPosition: imagePosition,
+                                transition: 'transform 0.05s ease',
+                                clipPath: 'polygon(0 0, 100% 0, 100% 90%, 20% 90%, 0 100%)', // Cambia esta forma según lo que necesites
+                                // clipPath: 'polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 19% 80%, 0 88%, 0% 80%, 0 8%)', // Cambia esta forma según lo que necesites
+                                userSelect: 'none',
+                                borderTopLeftRadius: '.5rem',
+                                borderTopRightRadius: '.5rem'
+                            }}
+                            draggable={false}
+                        />
 
-            <Stack mt={-6} px={10}>
+
+
+                    </Box>
+
+                </Box>
+            </Link>
+
+            <Stack px={10} pb={10} pt={3} >
                 <Link href={url} style={{ zIndex: 5 }}>
                     <HeadingGradient size='2xl'>
                         {title}
@@ -99,6 +94,27 @@ const InfoCard = ({
                 <Text>
                     {description}
                 </Text>
+                <Box
+                    position={'absolute'}
+                    right={3}
+                    bottom={-3}
+
+                >
+                    <Link
+                        href={url}
+                    >
+                        <Button
+                            colorPalette={'white'}
+                            px={5}
+                            fontWeight={'bold'}
+                        >
+                            Ver más
+                            <BsChevronRight
+                                size={25}
+                            />
+                        </Button>
+                    </Link>
+                </Box>
             </Stack>
 
         </Box>

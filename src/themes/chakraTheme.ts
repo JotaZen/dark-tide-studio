@@ -27,6 +27,7 @@ const config = defineConfig({
           300: { value: "#4dceff" },
           400: { value: "#1ac0ff" },
           500: { value: "#32aafa" }, // Color base ajustado
+          501: { value: "#32aafa50" }, // Color base ajustado
           600: { value: "#0082b3" },
           700: { value: "#005e80" },
           800: { value: "#00394d" },

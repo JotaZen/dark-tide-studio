@@ -7,6 +7,7 @@ import { getTranslations } from 'next-intl/server';
 import { Flex } from '@chakra-ui/react';
 import SOTDCard from '@/components/projects/sotd/sotd-card';
 import HighlightGallery from '@/components/ui/galleries/highlight-gallery';
+import HeadingGradient from '@/components/ui/text/heading-gradient';
 
 export async function generateMetadata() {
     const t = await getTranslations();
@@ -105,7 +106,7 @@ export default function Page() {
                         </Text>
                     </Flex>
 
-                    <Stack gap={5} mt={3}>
+                    <Stack gap={0} mt={3}>
                         <Heading
                             fontSize={{
                                 base: '3xl',
@@ -121,7 +122,7 @@ export default function Page() {
                         >
                             {t('pages.home.quote_hero_1')}
                         </Heading>
-                        <Heading
+                        {/* <Heading
                             fontSize={{
                                 base: '4xl',
                                 md: '5xl'
@@ -135,7 +136,12 @@ export default function Page() {
                             m={0}
                         >
                             {t('pages.home.quote_hero_2')}
-                        </Heading>
+                        </Heading> */}
+                        <HeadingGradient
+                            size={'5xl'}
+                        >
+                            {t('pages.home.quote_hero_2')}
+                        </HeadingGradient>
                     </Stack>
 
 
