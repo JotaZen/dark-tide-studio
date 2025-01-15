@@ -1,6 +1,10 @@
 import mainRoutes from "@/routes/routes";
 import Cookies from "js-cookie";
 
+export const getLocales = () => {
+  return ["es", "en"];
+};
+
 export const getLocation = () => {
   return "/" + (Cookies.get("NEXT_LOCALE") || "es");
 };

@@ -24,8 +24,8 @@ const InfoCard = ({
 }) => {
     return (
         <Box
-            minW={"22rem"}
-            width={'100%'}
+            minW={"20rem"}
+            width={"20rem"}
             position={'relative'}
             borderRadius={'.5rem'}
             className="glass-dark"
@@ -44,7 +44,7 @@ const InfoCard = ({
                 >
                     <Box
                         width={'100%'}
-                        height={'18rem'}
+                        height={'14rem'}
                         position={'relative'}
 
                     >
@@ -75,7 +75,7 @@ const InfoCard = ({
 
             <Stack px={10} pb={10} pt={3} >
                 <Link href={url} style={{ zIndex: 5 }}>
-                    <HeadingGradient size='2xl'>
+                    <HeadingGradient size='xl'>
                         {title}
                     </HeadingGradient>
                 </Link>
@@ -91,7 +91,7 @@ const InfoCard = ({
                         ))
                     }
                 </HStack>
-                <Text>
+                <Text fontSize={'sm'}>
                     {description}
                 </Text>
                 <Box

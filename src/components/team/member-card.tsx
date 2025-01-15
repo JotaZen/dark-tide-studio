@@ -68,7 +68,7 @@ const MemberCard = ({
             _hover={{
                 bgColor: 'rgba(0,0,0)',
                 cursor: 'pointer',
-                scale: 1.01
+                transform: 'translateY(-.3rem)',
             }}
         >
             {image && <Box w={

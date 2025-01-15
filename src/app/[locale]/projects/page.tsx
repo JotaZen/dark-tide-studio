@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import React from 'react'
 
+
 export async function generateMetadata() {
     const t = await getTranslations();
 

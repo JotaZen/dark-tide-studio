@@ -85,16 +85,15 @@ const HighlightGallery = () => {
                 id="galeria-destacados"
                 position="relative"
                 w="100%"
-                py={'7rem'}
+                py={'10rem'}
             >
                 <Center>
-                    <HeadingGradient>
+                    <HeadingGradient size="2xl">
                         Destacados
                     </HeadingGradient>
                 </Center>
                 <Flex
                     ref={scrollContainerRef}
-                    mt={'3rem'}
                     flex={1}
                     py={'3rem'}
                     overflowX="scroll"
@@ -116,7 +115,7 @@ const HighlightGallery = () => {
                         badges={["Ilustrador", "Equipo"]}
                         description="Encargado de la ilustración y diseño de personajes"
                     />
-                  
+
                     <InfoCard
                         image="/img/projects/sotd/concept/visuals1.png"
                         badges={["Videojuegos", "Proyectos"]}
@@ -133,7 +132,7 @@ const HighlightGallery = () => {
                         url={getRoute(projectRoutes.huasoShowdown.path)}
                         description="Boss Rush JAM con temática chilena"
                     />
-                  
+
                     <Box px={8} />
 
                 </Flex>
