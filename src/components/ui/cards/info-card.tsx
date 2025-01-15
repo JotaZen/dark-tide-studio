@@ -91,7 +91,7 @@ const InfoCard = ({
                         ))
                     }
                 </HStack>
-                <Text fontSize={'sm'}>
+                <Text fontSize={'sm'} color={'gray.50'}>
                     {description}
                 </Text>
                 <Box
