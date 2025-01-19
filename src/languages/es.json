@@ -13,7 +13,11 @@
         },
         "about-us": {
             "title": "Nosotros",
-            "description": "Conozca más sobre Dark Tide Studio y el equipo detrás de escena."
+            "description": "Conozca más sobre Dark Tide Studio y el equipo."
+        },
+        "contact": {
+            "title": "Contacto",
+            "description": "Información de contacto."
         },
         "projects": {
             "title": "Proyectos",

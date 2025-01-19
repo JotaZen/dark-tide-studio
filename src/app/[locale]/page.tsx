@@ -18,6 +18,8 @@ export async function generateMetadata() {
     }
 }
 
+
+
 export default function Page() {
     const t = useTranslations();
 
@@ -52,9 +54,10 @@ export default function Page() {
 
                 ]}
             >
-                <Stack flex={1} justify={'center'} align={'start'} position={'relative'} zIndex={2}
-                    pl={'15%'}
 
+                <Stack justify={'center'} align={'start'} position={'relative'} zIndex={2}
+                    pl={'15%'}
+                    flex={1}
                 >
                     <Flex
                         zIndex={2}
@@ -144,10 +147,11 @@ export default function Page() {
                         </HeadingGradient>
                     </Stack>
 
-
-
-
                 </Stack>
+
+
+
+
                 <ScrollButton />
 
             </Hero>
