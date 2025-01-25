@@ -2,7 +2,7 @@ import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
 import SOTDCard from '@/components/projects/sotd/sotd-card'
 import ScrollButton from '@/components/ui/buttons/scroll-button'
-import { Flex } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import React from 'react'
@@ -42,7 +42,6 @@ const Page = () => {
 
                     }}
                     h={'100%'}
-                    pb={'5%'}
                 >
 
                     <PageTitle
@@ -50,6 +49,16 @@ const Page = () => {
                         title={t('routes.projects.title')}
                     />
                 </Flex>
+                <Text
+                    fontSize={'xl'}
+                    color={'white'}
+                    px={5}
+                    textAlign={'center'}
+                    pb={'5%'}
+                    pt={5}
+                >
+                    {t('routes.projects.description')}
+                </Text>
                 <ScrollButton />
             </Hero >
 

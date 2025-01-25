@@ -3,6 +3,7 @@
 import { Box, Flex, Stack } from '@chakra-ui/react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
+import { MouseParallax } from 'react-just-parallax';
 
 const Hero = ({
     height = '100vh',
@@ -64,27 +65,29 @@ const Hero = ({
                 boxShadow: '0 -4.5rem 3rem 2.5rem var(--chakra-colors-main-800)',
                 zIndex: -1,
             }}
-
+            overflow={'hidden'}
         >
+            <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.01}>
 
-            {
-                images.map((image, index) => (
-                    <Image
-                        key={index}
-                        style={{
-                            opacity: (backgroundIndex === index && clientLoaded) ? 1 : 0,
-                            transition: 'opacity 0.75s',
-                            padding: image.p || '0'
-                        }}
-                        src={image.src}
-                        alt={'Hero Image ' + index}
-                        layout={image.layout || 'fill'}
-                        objectFit={image.objectFit || 'cover'}
-                        objectPosition={image.objectPosition || 'center'}
+                {
+                    images.map((image, index) => (
+                        <Image
+                            key={index}
+                            style={{
+                                opacity: (backgroundIndex === index && clientLoaded) ? 1 : 0,
+                                transition: 'opacity 0.75s',
+                                padding: image.p || '0'
+                            }}
+                            src={image.src}
+                            alt={'Hero Image ' + index}
+                            layout={image.layout || 'fill'}
+                            objectFit={image.objectFit || 'cover'}
+                            objectPosition={image.objectPosition || 'center'}
 
-                    />
-                ))
-            }
+                        />
+                    ))
+                }
+            </MouseParallax>
 
 
             {/* overlay */}
@@ -106,6 +109,7 @@ const Hero = ({
                 {children}
             </Stack>
         </Flex >
+
     )
 }
 

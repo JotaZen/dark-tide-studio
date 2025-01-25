@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { BsChevronRight } from 'react-icons/bs'
-import { ScrollParallax } from 'react-just-parallax'
+import { MouseParallax, ScrollParallax } from 'react-just-parallax'
 
 const SOTDCard = () => {
     return (
@@ -22,22 +22,25 @@ const SOTDCard = () => {
             color={'white'}
             overflow={'hidden'}
         >
+            <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.005}>
 
-            <ScrollParallax
-                isAbsolutelyPositioned
-            >
-                <Image
-                    src={'/img/projects/sotd/concept/1.jpg'}
-                    alt={'Hero Image 2'}
-                    fill
-                    style={{
-                        position: 'absolute',
-                        objectFit: 'cover',
-                        objectPosition: 'bottom'
-                    }}
+                <ScrollParallax
+                    isAbsolutelyPositioned
+                    strength={0.07}
+                >
+                    <Image
+                        src={'/img/projects/sotd/concept/1.jpg'}
+                        alt={'Hero Image 2'}
+                        fill
+                        style={{
+                            position: 'absolute',
+                            objectFit: 'cover',
+                            objectPosition: 'bottom'
+                        }}
 
-                />
-            </ScrollParallax>
+                    />
+                </ScrollParallax>
+            </MouseParallax>
 
             <Overlay />
             <Flex flex={1}></Flex>

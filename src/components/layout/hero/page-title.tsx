@@ -1,3 +1,5 @@
+import { BoxReveal } from '@/components/ui/box-reveal'
+import HeadingGradient from '@/components/ui/text/heading-gradient'
 import { Flex, Heading, Stack } from '@chakra-ui/react'
 import React from 'react'
 
@@ -32,70 +34,66 @@ const PageTitle = ({
                     gap={0}
                     pl={leftPadding}>
 
-                    {title && <Flex>
-                        <Heading
-                            fontSize={{
-                                base: 'md',
-                                md: 'xl'
+                    {title && <BoxReveal boxColor={"white"} duration={0.4}>
+                        <Flex>
+                            <Heading
+                                fontSize={{
+                                    base: 'md',
+                                    md: 'xl'
+                                }}
+                                color={'gray.300'}
+                                style={{
+                                    fontWeight: 'bolder',
+                                }}
+                                as={'h2'}
+                                letterSpacing={'tight'}
+                                m={0}
+                            >
+                                Dark
+                            </Heading>
+                            <Heading
+                                fontSize={{
+                                    base: 'md',
+                                    md: 'xl'
+                                }}
+                                color={'main.400'}
+                                style={{
+                                    fontWeight: 'bolder',
+                                }}
+                                as={'h2'}
+                                letterSpacing={'tight'}
+                                m={0}
+                            >
+                                Tide
+                            </Heading>
+                            <Heading
+                                fontSize={{
+                                    base: 'md',
+                                    md: 'xl'
+                                }}
+                                color={'gray.300'}
+                                style={{
+                                    fontWeight: 'bolder',
+                                }}
+                                as={'h2'}
+                                letterSpacing={'tight'}
+                                m={0}
+                            >
+                                Studio
+                            </Heading>
+                        </Flex>
+                    </BoxReveal>
+                    }
+                    <BoxReveal boxColor={"var(--chakra-colors-main-500)"} duration={0.4}>
+                        <HeadingGradient
+                            size={{
+                                base: '3xl',
+                                md: '5xl'
                             }}
-                            color={'gray.300'}
-                            style={{
-                                fontWeight: 'bolder',
-                            }}
-                            as={'h2'}
-                            letterSpacing={'tight'}
-                            m={0}
                         >
-                            Dark
-                        </Heading>
-                        <Heading
-                            fontSize={{
-                                base: 'md',
-                                md: 'xl'
-                            }}
-                            color={'main.400'}
-                            style={{
-                                fontWeight: 'bolder',
-                            }}
-                            as={'h2'}
-                            letterSpacing={'tight'}
-                            m={0}
-                        >
-                            Tide
-                        </Heading>
-                        <Heading
-                            fontSize={{
-                                base: 'md',
-                                md: 'xl'
-                            }}
-                            color={'gray.300'}
-                            style={{
-                                fontWeight: 'bolder',
-                            }}
-                            as={'h2'}
-                            letterSpacing={'tight'}
-                            m={0}
-                        >
-                            Studio
-                        </Heading>
-                    </Flex>}
-
-                    <Heading
-                        fontSize={{
-                            base: '3xl',
-                            md: '5xl'
-                        }}
-                        color={'gray.200'}
-                        style={{
-                            fontWeight: 'bolder',
-                        }}
-                        letterSpacing={'tight'}
-                        m={0}
-                        mt={3}
-                        as={'h1'}
-                    >
-                        {title}
-                    </Heading>
+                            {title}
+                        </HeadingGradient>
+                    </BoxReveal>
                     {leftChildren}
 
                 </Stack >

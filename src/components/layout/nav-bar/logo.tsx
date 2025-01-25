@@ -8,7 +8,17 @@ const Logo = ({
     inverted?: boolean
 }) => {
     return (
-        <Flex align={'center'} justify={'center'} position={'relative'} gap={1}>
+        <Flex
+            align={'center'}
+            justify={'center'}
+            position={'relative'}
+            gap={1}
+            _hover={{
+                '& > div > *': { // Selecciona los hijos del segundo Flex
+                    color: 'main.600',
+                },
+            }}
+        >
             <Image
                 src={'/img/logo.png'}
                 alt={'Logo'}
@@ -27,6 +37,7 @@ const Logo = ({
                     }}
                     letterSpacing={'tight'}
                     m={0}
+                    transition={'color 0.5s, underline 0.5s'}
                 >
                     Dark
                 </Text>
@@ -39,6 +50,8 @@ const Logo = ({
                     }}
                     letterSpacing={'tight'}
                     m={0}
+                    transition={'color 0.5s, underline 0.5s'}
+
                 >
                     Tide
                 </Text>
@@ -51,6 +64,7 @@ const Logo = ({
                     }}
                     letterSpacing={'tight'}
                     m={0}
+                    transition={'color 0.5s'}
                 >
                     Studio
                 </Text>

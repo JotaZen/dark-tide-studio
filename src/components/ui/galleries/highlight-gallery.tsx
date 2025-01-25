@@ -35,7 +35,10 @@ const HighlightGallery = () => {
             overflow={'hidden'}
         >
 
-            <ScrollParallax isAbsolutelyPositioned>
+            <ScrollParallax 
+                strength={-0.1}
+            isAbsolutelyPositioned
+            >
                 <GridPattern
 
                     width={100}
