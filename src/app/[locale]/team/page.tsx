@@ -1,6 +1,7 @@
 import Hero from '@/components/layout/hero/hero'
 import PageTitle from '@/components/layout/hero/page-title'
 import MemberCard from '@/components/team/member-card'
+import { BoxReveal } from '@/components/ui/box-reveal'
 import { Box, Center, GridItem, Separator, SimpleGrid, Stack } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
@@ -57,52 +58,56 @@ const Page = () => {
                     >
                         {/* 1 */}
                         <GridItem >
-                            <MemberCard
-                                id='jota-zen'
-                                name={'Jota Zen'}
-                                roles={['Música', 'Developer']}
-                                image={'/img/team/Jota.jpg'}
-                                description={'Música y desarrollo'}
-                                contact={[
-                                    {
-                                        url: 'https://github.com/JotaZen',
-                                        icon: <BsGithub />,
-                                        text: '',
-                                        color: 'gray',
-                                        variant: 'solid',
-                                        tooltip: 'GitHub'
-                                    },
+                            <BoxReveal boxColor='var(--chakra-colors-gray-900)' borderRadius='.5rem'>
+                                <MemberCard
+                                    id='jota-zen'
+                                    name={'Jota Zen'}
+                                    roles={['Música', 'Developer']}
+                                    image={'/img/team/Jota.jpg'}
+                                    description={'Música y desarrollo'}
+                                    contact={[
+                                        {
+                                            url: 'https://github.com/JotaZen',
+                                            icon: <BsGithub />,
+                                            text: '',
+                                            color: 'gray',
+                                            variant: 'solid',
+                                            tooltip: 'GitHub'
+                                        },
 
-                                ]}
-                            />
+                                    ]}
+                                />
+                            </BoxReveal>
                         </GridItem>
                         <GridItem>
-                            <MemberCard
-                                id='coal-charcoal'
-                                name={'Coal Charcoal'}
-                                roles={['Ilustrador']}
-                                image={'/img/team/Coal.png'}
-                                description={'Ilustración y diseño de personajes'}
-                                contact={[
-                                    {
-                                        url: '',
-                                        icon: <BsGlobe />,
-                                        text: '',
-                                        tooltip: 'Web',
-                                        color: 'blue',
-                                        variant: 'solid'
-                                    },
-                                    {
-                                        url: '/es/projects',
-                                        icon: <BsInstagram />,
-                                        text: '',
-                                        color: 'pink',
-                                        variant: 'solid',
-                                        tooltip: 'Instagram'
-                                    },
+                            <BoxReveal boxColor='var(--chakra-colors-gray-900)' borderRadius='.5rem'>
+                                <MemberCard
+                                    id='coal-charcoal'
+                                    name={'Coal Charcoal'}
+                                    roles={['Ilustrador']}
+                                    image={'/img/team/Coal.png'}
+                                    description={'Ilustración y diseño de personajes'}
+                                    contact={[
+                                        {
+                                            url: '',
+                                            icon: <BsGlobe />,
+                                            text: '',
+                                            tooltip: 'Web',
+                                            color: 'blue',
+                                            variant: 'solid'
+                                        },
+                                        {
+                                            url: '/es/projects',
+                                            icon: <BsInstagram />,
+                                            text: '',
+                                            color: 'pink',
+                                            variant: 'solid',
+                                            tooltip: 'Instagram'
+                                        },
 
-                                ]}
-                            />
+                                    ]}
+                                />
+                            </BoxReveal>
                         </GridItem>
 
 
@@ -110,27 +115,31 @@ const Page = () => {
 
 
                         <GridItem mr={-5} ml={5}>
-                            <MemberCard
-                                id='pato'
-                                name={'Pato'}
-                                roles={['Developer']}
-                                image={'/img/team/user.webp'}
-                                description={'Desarrollo'}
-                                contact={[
-                                ]}
-                            />
+                            <BoxReveal boxColor='var(--chakra-colors-gray-900)' borderRadius='.5rem'>
+                                <MemberCard
+                                    id='pato'
+                                    name={'Pato'}
+                                    roles={['Developer']}
+                                    image={'/img/team/user.webp'}
+                                    description={'Desarrollo'}
+                                    contact={[
+                                    ]}
+                                />
+                            </BoxReveal>
                         </GridItem>
 
                         <GridItem mr={-5} ml={5}>
-                            <MemberCard
-                                id='pancho'
-                                name={'Pancho'}
-                                roles={['Tester', 'QA']}
-                                image={'/img/team/user.webp'}
-                                description={'Pruebas y control de calidad'}
-                                contact={[
-                                ]}
-                            />
+                            <BoxReveal boxColor='var(--chakra-colors-gray-900)' borderRadius='.5rem'>
+                                <MemberCard
+                                    id='pancho'
+                                    name={'Pancho'}
+                                    roles={['Tester', 'QA']}
+                                    image={'/img/team/user.webp'}
+                                    description={'Pruebas y control de calidad'}
+                                    contact={[
+                                    ]}
+                                />
+                            </BoxReveal>
                         </GridItem>
 
                     </SimpleGrid>

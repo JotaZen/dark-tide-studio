@@ -197,10 +197,12 @@ export default function Page() {
                 <ScrollButton />
 
             </Hero>
-            <BlurFade delay={0.5} inView>
+            <BlurFade delay={0.15} inView>
                 <HighlightGallery />
             </BlurFade>
-            <SOTDCard />
+            <BlurFade delay={0.15} inView>
+                <SOTDCard />
+            </BlurFade>
 
 
 

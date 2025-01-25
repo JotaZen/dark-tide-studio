@@ -20,7 +20,7 @@ const HeadingGradient = ({
                 bgClip="text"
                 display={"inline-block"}
                 className="animated-gradient"
-
+                m={0}
             >
                 {children}
             </Heading>

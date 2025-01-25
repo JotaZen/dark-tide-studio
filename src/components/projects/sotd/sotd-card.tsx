@@ -1,3 +1,5 @@
+"use client"
+
 import Overlay from '@/components/ui/bg/overlay'
 import HeadingGradient from '@/components/ui/text/heading-gradient'
 import { getLocation } from '@/helpers/routesHelper'
@@ -7,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { BsChevronRight } from 'react-icons/bs'
+import { ScrollParallax } from 'react-just-parallax'
 
 const SOTDCard = () => {
     return (
@@ -17,18 +20,25 @@ const SOTDCard = () => {
             minH={'100dvh'}
             objectFit={'cover'}
             color={'white'}
+            overflow={'hidden'}
         >
 
-            <Image
-                src={'/img/projects/sotd/concept/1.jpg'}
-                alt={'Hero Image 2'}
-                fill
-                style={{
-                    objectFit: 'cover',
-                    objectPosition: 'bottom'
-                }}
+            <ScrollParallax
+                isAbsolutelyPositioned
+            >
+                <Image
+                    src={'/img/projects/sotd/concept/1.jpg'}
+                    alt={'Hero Image 2'}
+                    fill
+                    style={{
+                        position: 'absolute',
+                        objectFit: 'cover',
+                        objectPosition: 'bottom'
+                    }}
 
-            />
+                />
+            </ScrollParallax>
+
             <Overlay />
             <Flex flex={1}></Flex>
 

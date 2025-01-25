@@ -104,16 +104,18 @@ const Page = () => {
                                             Coal
                                         </Text>
                                         <Text
+                                            color={'main.500'}
+                                            letterSpacing={'tight'}
+                                            m={0}
+                                            fontWeight={"bolder"}
                                             fontSize={{
                                                 base: '3xl',
                                                 md: '5xl'
                                             }}
-                                            color={'main.500'}
-                                            style={{
-                                                fontWeight: 'bolder',
-                                            }}
-                                            letterSpacing={'tight'}
-                                            m={0}
+                                            backgroundImage="linear-gradient(to right, var(--chakra-colors-main-200), var(--chakra-colors-main-600),var(--chakra-colors-main-200))"
+                                            bgClip="text"
+                                            display={"inline-block"}
+                                            className="animated-gradient"
                                         >
                                             Charcoal
                                         </Text>

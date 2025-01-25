@@ -32,11 +32,12 @@ const HighlightGallery = () => {
             position="relative"
             w="100%"
             bgColor={"gray.800"}
-            boxShadow={'inset 0 0 20rem 100rem rgba(0,0,0,0.1)'}
+            overflow={'hidden'}
         >
 
             <ScrollParallax isAbsolutelyPositioned>
                 <GridPattern
+
                     width={100}
                     height={100}
                     x={-1}
@@ -57,7 +58,11 @@ const HighlightGallery = () => {
                         [10, 17],
                         [16, 10],
                         [30, 10],
-                        [40, 10],
+                        [12, 5],
+                        [13, 7],
+                        [16, 2],
+                        [15, 3],
+                        [16, 4],
                     ]}
                     className={cn(
                         "[mask-image:radial-gradient(circle_at_center,transparent)]",

@@ -1,20 +1,26 @@
 "use client";
 
 import { motion, useAnimation, useInView } from "motion/react";
-import { useEffect, useRef } from "react";
+import { JSX, useEffect, useRef } from "react";
 
 interface BoxRevealProps {
   children: JSX.Element;
   width?: "fit-content" | "100%";
   boxColor?: string;
   duration?: number;
+  ySlide?: number;
+  startHidden?: boolean;
+  borderRadius?: string;
 }
 
 export const BoxReveal = ({
   children,
   width = "fit-content",
-  boxColor = "#5046e6",
+  boxColor = "white",
   duration,
+  ySlide = 75,
+  startHidden = true,
+  borderRadius = '0'
 }: BoxRevealProps) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
@@ -36,7 +42,7 @@ export const BoxReveal = ({
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: startHidden ? 0 : 1, y: ySlide },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
@@ -56,8 +62,9 @@ export const BoxReveal = ({
         transition={{ duration: duration ? duration : 0.5, ease: "easeIn" }}
         style={{
           position: "absolute",
-          top: 4,
-          bottom: 4,
+          top: 0,
+          borderRadius: borderRadius,
+          bottom: 0,
           left: 0,
           right: 0,
           zIndex: 20,

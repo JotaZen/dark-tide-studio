@@ -12,6 +12,7 @@ const Overlay = () => {
                 height: '100%',
                 backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 zIndex: 0,
+                boxShadow: 'inset 0 0 10rem 1rem rgba(0,0,0,1)'
             }
             }
         />
