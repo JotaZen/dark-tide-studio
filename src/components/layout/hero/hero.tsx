@@ -61,7 +61,7 @@ const Hero = ({
                 left: 0,
                 width: '100%',
                 height: '10px',
-                boxShadow: '0 -4.5rem 3rem 4rem var(--chakra-colors-main-800)',
+                boxShadow: '0 -4.5rem 3rem 2.5rem var(--chakra-colors-main-800)',
                 zIndex: -1,
             }}
 
@@ -73,7 +73,7 @@ const Hero = ({
                         key={index}
                         style={{
                             opacity: (backgroundIndex === index && clientLoaded) ? 1 : 0,
-                            transition: 'opacity .5s',
+                            transition: 'opacity 0.75s',
                             padding: image.p || '0'
                         }}
                         src={image.src}

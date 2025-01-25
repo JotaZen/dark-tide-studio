@@ -34,7 +34,8 @@
     "pages": {
         "home": {
             "quote_hero_1": "Desarrollo de",
-            "quote_hero_2": "Videojuegos"
+            "quote_hero_2": "Videojuegos",
+            "description": "Somos un estudio independiente y comunidad creativa ubicada en la región del Biobío, Chile. Nos dedicamos al desarrollo de videojuegos y software interactivo. Nuestro enfoque está en impulsar el crecimiento de desarrolladores, artistas y jugadores"
         },
         "404": {
             "title": "Página no encontrada",

@@ -146,6 +146,41 @@ body.prevent-scroll {
   /* color: var(--chakra-colors-main-500); */
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 200% 40%;
+    /* Comienza desde la derecha */
+  }
+
+  40% {
+    background-position: 40% 50%;
+    /* Llega a la mitad */
+  }
+
+  50% {
+    background-position: 50% 50%;
+    /* Llega a la mitad */
+  }
+
+  65% {
+    background-position: 75% 50%;
+    /* Retrocede más hacia la derecha */
+  }
+
+  100% {
+    background-position: 0% 50%;
+    /* Termina a la izquierda */
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 100%;
+  /* Hace que el gradiente se repita suavemente */
+  /* Asegura que el gradiente tenga espacio para moverse */
+  animation: gradientAnimation 4s ease-in-out infinite;
+  /* Configura la duración y tipo de animación */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

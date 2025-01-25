@@ -22,9 +22,11 @@ const SOTDCard = () => {
             <Image
                 src={'/img/projects/sotd/concept/1.jpg'}
                 alt={'Hero Image 2'}
-                layout={'fill'}
-                objectFit={'cover'}
-                objectPosition={'bottom'}
+                fill
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'bottom'
+                }}
 
             />
             <Overlay />
