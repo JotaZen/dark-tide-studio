@@ -13,7 +13,7 @@
         },
         "about-us": {
             "title": "Nosotros",
-            "description": "Conozca más sobre Dark Tide Studio y el equipo."
+            "description": "Conozca más sobre Dark Tide Studio"
         },
         "contact": {
             "title": "Contacto",
@@ -21,11 +21,11 @@
         },
         "projects": {
             "title": "Proyectos",
-            "description": "Explore algunos de los proyectos en los que ha trabajado Dark Tide Studio."
+            "description": "Algunos de los proyectos en los que ha trabajado Dark Tide Studio"
         },
         "team": {
             "title": "Equipo",
-            "description": "Conozca al equipo detrás de Dark Tide Studio."
+            "description": "Equipo detrás de Dark Tide Studio"
         }
     },
     "general": {

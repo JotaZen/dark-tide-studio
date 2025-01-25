@@ -30,7 +30,8 @@
     "pages": {
         "home": {
             "quote_hero_1": "Game",
-            "quote_hero_2": "Development"
+            "quote_hero_2": "Development",
+            "description": "Dark Tide Studio is an independent video game development studio located in the Biobío region, Chile. We specialize in the development of video games and interactive software. Our focus is on fostering the growth of developers, artists, and players."
         },
         "404": {
             "title": "Page not found",
